@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
-
 using Verse;
 using UnityEngine;
-using System.Security.Cryptography;
 
 namespace StevesDoors
 {
@@ -39,44 +37,44 @@ namespace StevesDoors
 
                     switch (rotation.AsInt)
                     {
-                        case 0: // door facing North
-                            float xMoveN = gD.isLeftSideGraphic ? -gD.xMoveAmount : gD.xMoveAmount;
+                        case 0: // door facing South
+                            float xMoveS = gD.isLeftSideGraphic ? -gD.xMoveAmount : gD.xMoveAmount;
                             
-                            float zMoveN;
+                            float zMoveS;
                             if (gD.shouldArch && gD.isLeftSideGraphic)
                             {
-                                zMoveN = Mathf.Lerp(-archFactor, archFactor, Door.OpenPct);
+                                zMoveS = Mathf.Lerp(-archFactor, archFactor, Door.OpenPct);
                             }
                             else if (gD.shouldArch && !gD.isLeftSideGraphic)
                             {
-                                zMoveN = Mathf.Lerp(archFactor, -archFactor, Door.OpenPct);
+                                zMoveS = Mathf.Lerp(archFactor, -archFactor, Door.OpenPct);
                             }
                             else
                             {
-                                zMoveN = 0f;
+                                zMoveS = 0f;
                             }
                             
-                            moveDir = new Vector3(xMoveN, 0f, zMoveN);
+                            moveDir = new Vector3(xMoveS, 0f, zMoveS);
                             break;
                             
-                        case 1: // door facing East
-                            float zMoveE = gD.isLeftSideGraphic ? -gD.xMoveAmount : gD.xMoveAmount;
+                        case 1: // door facing West
+                            float zMoveW = gD.isLeftSideGraphic ? gD.xMoveAmount : -gD.xMoveAmount;
 
-                            float xMoveE;
+                            float xMoveW;
                             if (gD.shouldArch && gD.isLeftSideGraphic)
                             {
-                                xMoveE = Mathf.Lerp(-archFactor, archFactor, Door.OpenPct);
+                                xMoveW = Mathf.Lerp(-archFactor, archFactor, Door.OpenPct);
                             }
                             else if (gD.shouldArch && !gD.isLeftSideGraphic)
                             {
-                                xMoveE = Mathf.Lerp(archFactor, -archFactor, Door.OpenPct);
+                                xMoveW = Mathf.Lerp(archFactor, -archFactor, Door.OpenPct);
                             }
                             else
                             {
-                                xMoveE = 0f;
+                                xMoveW = 0f;
                             }
 
-                            moveDir = new Vector3(xMoveE, 0f, zMoveE);
+                            moveDir = new Vector3(xMoveW, 0f, zMoveW);
                             break;
 
                         default:
