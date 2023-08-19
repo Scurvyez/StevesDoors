@@ -3,7 +3,7 @@
 
     <!--========================= Default Glass Door (1x1) =============================-->
 
-    <ThingDef ParentName="SD_GlassDoorBase">
+    <ThingDef ParentName="SD_GlassDoorBase" Name="SD_GlassDoorDefault">
         <defName>SD_GlassDoorDefault</defName>
         <label>default glass door (1x1)</label>
         <thingClass>StevesDoors.Building_UnmirroredDoor</thingClass>
@@ -74,33 +74,16 @@
 
     <!--========================= Sliding Single Glass Door (1x1) =============================-->
 
-    <ThingDef ParentName="SD_GlassDoorBase">
+    <ThingDef ParentName="SD_GlassDoorDefault">
         <defName>SD_GlassDoorSlidingSingle</defName>
         <label>sliding glass door (1x1)</label>
-        <thingClass>StevesDoors.Building_UnmirroredDoor</thingClass>
-        <description>Divides rooms. Powered and opens quickly. Color-changeable glow via the color picker. Allows light through as well.</description>
         <uiIconPath>Things/Building/Door/SD_GlassDoorSlidingSingle_MenuIcon</uiIconPath>
         <building>
             <blueprintGraphicData>
                 <texPath>Things/Building/Door/SD_GlassDoorSlidingSingle_Blueprint</texPath>
             </blueprintGraphicData>
         </building>
-        <researchPrerequisites>
-            <li>Autodoors</li>
-            <li>ColoredLights</li>
-        </researchPrerequisites>
-        <costList>
-            <Steel>10</Steel>
-            <ComponentIndustrial>1</ComponentIndustrial>
-        </costList>
-        <graphicData>
-            <texPath>Things/Building/Door/SD_Blank</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-            <damageData>
-                <enabled>false</enabled>
-            </damageData>
-        </graphicData>
-        <comps>
+        <comps Inherit="False">
             <li Class="CompProperties_Forbiddable"/>
             <li Class="CompProperties_Power">
                 <compClass>CompPowerTransmitter</compClass>
@@ -145,33 +128,16 @@
 
     <!--========================= Rolling Vault Single Glass Door (1x1) =============================-->
 
-    <ThingDef ParentName="SD_GlassDoorBase">
+    <ThingDef ParentName="SD_GlassDoorDefault">
         <defName>SD_GlassDoorRollingVaultSingle</defName>
-        <label>sliding glass door (1x1)</label>
-        <thingClass>StevesDoors.Building_UnmirroredDoor</thingClass>
-        <description>Divides rooms. Powered and opens quickly. Color-changeable glow via the color picker. Allows light through as well.</description>
+        <label>rolling vault glass door (1x1)</label>
         <uiIconPath>Things/Building/Door/SD_GlassDoorRollingVaultSingle_MenuIcon</uiIconPath>
         <building>
             <blueprintGraphicData>
                 <texPath>Things/Building/Door/SD_GlassDoorRollingVaultSingle_Blueprint</texPath>
             </blueprintGraphicData>
         </building>
-        <researchPrerequisites>
-            <li>Autodoors</li>
-            <li>ColoredLights</li>
-        </researchPrerequisites>
-        <costList>
-            <Steel>10</Steel>
-            <ComponentIndustrial>1</ComponentIndustrial>
-        </costList>
-        <graphicData>
-            <texPath>Things/Building/Door/SD_Blank</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-            <damageData>
-                <enabled>false</enabled>
-            </damageData>
-        </graphicData>
-        <comps>
+        <comps Inherit="False">
             <li Class="CompProperties_Forbiddable"/>
             <li Class="CompProperties_Power">
                 <compClass>CompPowerTransmitter</compClass>
@@ -216,10 +182,9 @@
 
     <!--========================= Angled Fading Glass Door (1x1) =============================-->
 
-    <ThingDef ParentName="SD_GlassDoorBase">
+    <ThingDef ParentName="SD_GlassDoorDefault">
         <defName>SD_GlassDoorAngledFading</defName>
         <label>angled-fading glass door (1x1)</label>
-        <thingClass>StevesDoors.Building_UnmirroredDoor</thingClass>
         <description>Divides rooms. Powered and opens quickly. Color-changeable glow via the color picker. Allows light through as well.</description>
         <uiIconPath>Things/Building/Door/SD_GlassDoorAngledFading_MenuIcon</uiIconPath>
         <building>
@@ -227,22 +192,7 @@
                 <texPath>Things/Building/Door/SD_GlassDoorAngledFading_Blueprint</texPath>
             </blueprintGraphicData>
         </building>
-        <researchPrerequisites>
-            <li>Autodoors</li>
-            <li>ColoredLights</li>
-        </researchPrerequisites>
-        <costList>
-            <Steel>10</Steel>
-            <ComponentIndustrial>1</ComponentIndustrial>
-        </costList>
-        <graphicData>
-            <texPath>Things/Building/Door/SD_Blank</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-            <damageData>
-                <enabled>false</enabled>
-            </damageData>
-        </graphicData>
-        <comps>
+        <comps Inherit="False">
             <li Class="CompProperties_Forbiddable"/>
             <li Class="CompProperties_Power">
                 <compClass>CompPowerTransmitter</compClass>
@@ -290,7 +240,7 @@
                         <shaderType>Transparent</shaderType>
                         <drawSize>(1.0, 1.0)</drawSize>
                         <shouldFade>true</shouldFade>
-                        <fadeFactor>0.55</fadeFactor>
+                        <fadeFactor>3.55</fadeFactor>
                         <isLeftSideGraphic>true</isLeftSideGraphic>
                     </li>
                     <li>
@@ -299,7 +249,7 @@
                         <shaderType>Transparent</shaderType>
                         <drawSize>(1.0, 1.0)</drawSize>
                         <shouldFade>true</shouldFade>
-                        <fadeFactor>0.55</fadeFactor>
+                        <fadeFactor>3.55</fadeFactor>
                     </li>
                 </extraDoorGraphics>
             </li>
@@ -308,33 +258,16 @@
 
     <!--========================= Arrow Glass Door (1x1) =============================-->
 
-    <ThingDef ParentName="SD_GlassDoorBase">
+    <ThingDef ParentName="SD_GlassDoorDefault">
         <defName>SD_GlassDoorArrow</defName>
         <label>arrow glass door (1x1)</label>
-        <thingClass>StevesDoors.Building_UnmirroredDoor</thingClass>
-        <description>Divides rooms. Powered and opens quickly. Color-changeable glow via the color picker. Allows light through as well.</description>
         <uiIconPath>Things/Building/Door/SD_GlassDoorArrow_MenuIcon</uiIconPath>
         <building>
             <blueprintGraphicData>
                 <texPath>Things/Building/Door/SD_GlassDoorArrow_Blueprint</texPath>
             </blueprintGraphicData>
         </building>
-        <researchPrerequisites>
-            <li>Autodoors</li>
-            <li>ColoredLights</li>
-        </researchPrerequisites>
-        <costList>
-            <Steel>10</Steel>
-            <ComponentIndustrial>1</ComponentIndustrial>
-        </costList>
-        <graphicData>
-            <texPath>Things/Building/Door/SD_Blank</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-            <damageData>
-                <enabled>false</enabled>
-            </damageData>
-        </graphicData>
-        <comps>
+        <comps Inherit="False">
             <li Class="CompProperties_Forbiddable"/>
             <li Class="CompProperties_Power">
                 <compClass>CompPowerTransmitter</compClass>
@@ -379,33 +312,16 @@
 
     <!--========================= Slanted Glass Door (1x1) =============================-->
 
-    <ThingDef ParentName="SD_GlassDoorBase">
+    <ThingDef ParentName="SD_GlassDoorDefault">
         <defName>SD_GlassDoorSlanted</defName>
         <label>slanted glass door (1x1)</label>
-        <thingClass>StevesDoors.Building_UnmirroredDoor</thingClass>
-        <description>Divides rooms. Powered and opens quickly. Color-changeable glow via the color picker. Allows light through as well.</description>
         <uiIconPath>Things/Building/Door/SD_GlassDoorSlanted_MenuIcon</uiIconPath>
         <building>
             <blueprintGraphicData>
                 <texPath>Things/Building/Door/SD_GlassDoorSlanted_Blueprint</texPath>
             </blueprintGraphicData>
         </building>
-        <researchPrerequisites>
-            <li>Autodoors</li>
-            <li>ColoredLights</li>
-        </researchPrerequisites>
-        <costList>
-            <Steel>10</Steel>
-            <ComponentIndustrial>1</ComponentIndustrial>
-        </costList>
-        <graphicData>
-            <texPath>Things/Building/Door/SD_Blank</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-            <damageData>
-                <enabled>false</enabled>
-            </damageData>
-        </graphicData>
-        <comps>
+        <comps Inherit="False">
             <li Class="CompProperties_Forbiddable"/>
             <li Class="CompProperties_Power">
                 <compClass>CompPowerTransmitter</compClass>
@@ -450,33 +366,16 @@
 
     <!--========================= Iris Glass Door (1x1) =============================-->
 
-    <ThingDef ParentName="SD_GlassDoorBase">
+    <ThingDef ParentName="SD_GlassDoorDefault">
         <defName>SD_GlassDoorIris</defName>
         <label>iris glass door (1x1)</label>
-        <thingClass>StevesDoors.Building_UnmirroredDoor</thingClass>
-        <description>Divides rooms. Powered and opens quickly. Color-changeable glow via the color picker. Allows light through as well.</description>
         <uiIconPath>Things/Building/Door/SD_GlassDoorIris_MenuIcon</uiIconPath>
         <building>
             <blueprintGraphicData>
                 <texPath>Things/Building/Door/SD_GlassDoorIris_Blueprint</texPath>
             </blueprintGraphicData>
         </building>
-        <researchPrerequisites>
-            <li>Autodoors</li>
-            <li>ColoredLights</li>
-        </researchPrerequisites>
-        <costList>
-            <Steel>10</Steel>
-            <ComponentIndustrial>1</ComponentIndustrial>
-        </costList>
-        <graphicData>
-            <texPath>Things/Building/Door/SD_Blank</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-            <damageData>
-                <enabled>false</enabled>
-            </damageData>
-        </graphicData>
-        <comps>
+        <comps Inherit="False">
             <li Class="CompProperties_Forbiddable"/>
             <li Class="CompProperties_Power">
                 <compClass>CompPowerTransmitter</compClass>
@@ -521,33 +420,16 @@
 
     <!--========================= Enhanced Iris Glass Door (1x1) =============================-->
 
-    <ThingDef ParentName="SD_GlassDoorBase">
+    <ThingDef ParentName="SD_GlassDoorDefault">
         <defName>SD_GlassDoorIrisEnhanced</defName>
         <label>enhanced iris glass door (1x1)</label>
-        <thingClass>StevesDoors.Building_UnmirroredDoor</thingClass>
-        <description>Divides rooms. Powered and opens quickly. Color-changeable glow via the color picker. Allows light through as well.</description>
         <uiIconPath>Things/Building/Door/SD_GlassDoorIrisEnhanced_MenuIcon</uiIconPath>
         <building>
             <blueprintGraphicData>
                 <texPath>Things/Building/Door/SD_GlassDoorIrisEnhanced_Blueprint</texPath>
             </blueprintGraphicData>
         </building>
-        <researchPrerequisites>
-            <li>Autodoors</li>
-            <li>ColoredLights</li>
-        </researchPrerequisites>
-        <costList>
-            <Steel>10</Steel>
-            <ComponentIndustrial>1</ComponentIndustrial>
-        </costList>
-        <graphicData>
-            <texPath>Things/Building/Door/SD_Blank</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-            <damageData>
-                <enabled>false</enabled>
-            </damageData>
-        </graphicData>
-        <comps>
+        <comps Inherit="False">
             <li Class="CompProperties_Forbiddable"/>
             <li Class="CompProperties_Power">
                 <compClass>CompPowerTransmitter</compClass>
@@ -594,11 +476,12 @@
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
                         <drawSize>(1.0, 1.0)</drawSize>
+                        <xMoveAmount>1</xMoveAmount>
                         <spinFactor>2.75</spinFactor>
                         <shouldFade>true</shouldFade>
-                        <fadeFactor>0.3</fadeFactor>
+                        <fadeFactor>3.0</fadeFactor>
                         <shouldArch>true</shouldArch>
-                        <archFactor>2</archFactor>
+                        <archFactor>1</archFactor>
                         <isLeftSideGraphic>true</isLeftSideGraphic>
                     </li>
                     <li>
@@ -606,11 +489,12 @@
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
                         <drawSize>(1.0, 1.0)</drawSize>
+                        <xMoveAmount>1</xMoveAmount>
                         <spinFactor>4</spinFactor>
                         <shouldFade>true</shouldFade>
-                        <fadeFactor>0.3</fadeFactor>
+                        <fadeFactor>3.0</fadeFactor>
                         <shouldArch>true</shouldArch>
-                        <archFactor>2</archFactor>
+                        <archFactor>1</archFactor>
                     </li>
                 </extraDoorGraphics>
             </li>
@@ -619,33 +503,16 @@
 
     <!--========================= Default Laser Door (1x1) =============================-->
 
-    <ThingDef ParentName="SD_GlassDoorBase">
+    <ThingDef ParentName="SD_GlassDoorDefault">
         <defName>SD_LaserDoorDefault</defName>
         <label>default laser door (1x1)</label>
-        <thingClass>StevesDoors.Building_UnmirroredDoor</thingClass>
-        <description>Divides rooms. Powered and opens quickly. Color-changeable glow via the color picker. Allows light through as well.</description>
         <uiIconPath>Things/Building/Door/SD_LaserDoorDefault_MenuIcon</uiIconPath>
         <building>
             <blueprintGraphicData>
                 <texPath>Things/Building/Door/SD_LaserDoorDefault_Blueprint</texPath>
             </blueprintGraphicData>
         </building>
-        <researchPrerequisites>
-            <li>Autodoors</li>
-            <li>ColoredLights</li>
-        </researchPrerequisites>
-        <costList>
-            <Steel>10</Steel>
-            <ComponentIndustrial>1</ComponentIndustrial>
-        </costList>
-        <graphicData>
-            <texPath>Things/Building/Door/SD_Blank</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-            <damageData>
-                <enabled>false</enabled>
-            </damageData>
-        </graphicData>
-        <comps>
+        <comps Inherit="False">
             <li Class="CompProperties_Forbiddable"/>
             <li Class="CompProperties_Power">
                 <compClass>CompPowerTransmitter</compClass>
@@ -664,7 +531,7 @@
                         <drawSize>(1.0, 1.0)</drawSize>
                         <spinFactor>2.75</spinFactor>
                         <shouldFade>true</shouldFade>
-                        <fadeFactor>0.15</fadeFactor>
+                        <fadeFactor>3.15</fadeFactor>
                         <useGlowerColor>true</useGlowerColor>
                         <isLeftSideGraphic>true</isLeftSideGraphic>
                     </li>
@@ -675,59 +542,12 @@
                         <drawSize>(1.0, 1.0)</drawSize>
                         <spinFactor>4</spinFactor>
                         <shouldFade>true</shouldFade>
-                        <fadeFactor>0.15</fadeFactor>
+                        <fadeFactor>3.15</fadeFactor>
                         <useGlowerColor>true</useGlowerColor>
                     </li>
                 </extraDoorGraphics>
             </li>
         </comps>
     </ThingDef>
-
-    <!--========================= Shielded Glass Door (1x1) =============================-->
-
-    <!-- <ThingDef ParentName="SD_GlassDoorBase">
-        <defName>SD_ShieldedGlassDoor</defName>
-        <label>shielded glass door (1x1)</label>
-        <thingClass>StevesDoors.Building_UnmirroredDoor</thingClass>
-        <description>Divides rooms. Powered and opens quickly. Color-changeable glow via the color picker. Allows light through and repels damage.</description>
-        <uiIconPath>Things/Building/Door/SD_GlassDoorMover_MenuIcon</uiIconPath>
-        <researchPrerequisites>
-            <li>Autodoors</li>
-            <li>ColoredLights</li>
-            <li>ShieldBelt</li>
-        </researchPrerequisites>
-        <costList>
-            <Steel>10</Steel>
-            <ComponentSpacer>1</ComponentSpacer>
-        </costList>
-        <graphicData>
-            <texPath>Things/Building/Door/SD_GlassDoorMover</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-            <damageData>
-                <enabled>false</enabled>
-            </damageData>
-        </graphicData>
-        <comps>
-            <li Class="CompProperties_Forbiddable"/>
-            <li Class="CompProperties_Power">
-                <compClass>CompPowerTransmitter</compClass>
-                <transmitsPower>true</transmitsPower>
-            </li>
-            <li Class="CompProperties_Glower">
-                <glowRadius>3</glowRadius>
-                <colorPickerEnabled>true</colorPickerEnabled>
-            </li>
-            <li Class="CompProperties_ProjectileInterceptor">
-                <radius>2</radius>
-                <interceptAirProjectiles>true</interceptAirProjectiles>
-                <color>(0,255,76)</color>
-                <reactivateEffect>MortarShieldGenerator_Reactivate</reactivateEffect>
-                <activeSound>MortarShield_Ambience</activeSound>
-                <disarmedByEmpForTicks>850</disarmedByEmpForTicks>
-                <chargeIntervalTicks>300000</chargeIntervalTicks>
-                <chargeDurationTicks>8000</chargeDurationTicks>
-            </li>
-        </comps>
-    </ThingDef> -->
 
 </Defs>
