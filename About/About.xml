@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ModMetaData>
+    <name>Steves Doors</name>
+    <author>Scurvyez</author>
+    <packageId>Scurvyez.StevesDoors</packageId>
+    <supportedVersions>
+        <li>1.4</li>
+    </supportedVersions>
+
+    <description>
+Discord: Steve o.O#1151
+steam: Scurvyez
+
+This mod adds some new doors to the game. Neon and glowing, mostly.
+    </description>
+
+    <loadAfter>
+        <li>Ludeon.RimWorld</li>
+    </loadAfter>
+</ModMetaData>
