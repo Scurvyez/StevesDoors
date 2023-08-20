@@ -1,6 +1,7 @@
 ﻿using RimWorld;
 using Verse;
 using UnityEngine;
+using System.Collections.Generic;
 
 namespace StevesDoors
 {
@@ -9,11 +10,90 @@ namespace StevesDoors
     {
         public float OpenPct => Mathf.Clamp01((float)ticksSinceOpen / (float)TicksToOpenNow);
         private CompProperties_EnhancedDoorGraphics CompEnhancedDoor;
-
+        private bool IsAccessDoor = false;
+        public HashSet<Faction> AllowedFactions = new HashSet<Faction>();
+        
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
             CompEnhancedDoor = def.GetCompProperties<CompProperties_EnhancedDoorGraphics>();
+        }
+
+        private bool AllowedForFaction(Faction faction)
+        {
+            return AllowedFactions.Contains(faction);
+        }
+
+        public override bool PawnCanOpen(Pawn p)
+        {
+            if (IsAccessDoor)
+            {
+                if (p.Faction == Faction.OfPlayer && !p.IsPrisonerOfColony)
+                {
+                    return true;
+                }
+                else if (p.Faction != null && AllowedForFaction(p.Faction))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return base.PawnCanOpen(p);
+            }
+        }
+
+        public override IEnumerable<Gizmo> GetGizmos()
+        {
+            foreach (Gizmo gizmo in base.GetGizmos())
+            {
+                yield return gizmo;
+            }
+            
+            if (Faction == Faction.OfPlayer)
+            {
+                Command_Toggle command = new Command_Toggle();
+                command.defaultLabel = "Set Restrictions"; // make key
+                command.defaultDesc = "Set whether or not this door will act as a secure access point."; // make key
+                command.isActive = () => IsAccessDoor;
+                command.toggleAction = delegate
+                {
+                    IsAccessDoor = !IsAccessDoor;
+                };
+                command.icon = IsAccessDoor ? TexCommands.RestrictedAccess : TexCommands.UnrestrictedAccess;
+                yield return command;
+
+                if (IsAccessDoor)
+                {
+                    Command_Action manageGroupsCommand = new Command_Action();
+                    manageGroupsCommand.defaultLabel = "Allowed Factions"; // make key
+                    manageGroupsCommand.defaultDesc = "Set which factions are allowed to use this door."; // make key
+                    manageGroupsCommand.action = OpenManageFactionsDialog;
+                    manageGroupsCommand.icon = TexCommands.AllowedAccess;
+                    yield return manageGroupsCommand;
+                }
+            }
+        }
+
+        private void OpenManageFactionsDialog()
+        {
+            Find.WindowStack.Add(new Dialog_ManageAllowedFactions(this));
+        }
+
+        public void ToggleFactionAllowed(Faction faction)
+        {
+            if (AllowedFactions.Contains(faction))
+            {
+                AllowedFactions.Remove(faction);
+            }
+            else
+            {
+                AllowedFactions.Add(faction);
+            }
         }
 
         public override void Draw()
@@ -38,12 +118,12 @@ namespace StevesDoors
 
                     switch (rotation.AsInt)
                     {
-                        case 0: // door facing North
+                        case 0: // door facing South
                             doorLeftMoveDir = new Vector3(-xMoveAmountL, 0f, 0f); // -1 means to the left one tile
                             doorRightMoveDir = new Vector3(xMoveAmountR, 0f, 0f); // 1, to the right one tile
                             DrawDoor(doorLeftMoveDir, doorRightMoveDir, curOpenPct, doorLMat, doorRMat);
                             break;
-                        case 1: // door facing East
+                        case 1: // door facing West
                             doorLeftMoveDir = new Vector3(0f, 0f, xMoveAmountL);
                             doorRightMoveDir = new Vector3(0f, 0f, -xMoveAmountR);
                             DrawDoor(doorLeftMoveDir, doorRightMoveDir, curOpenPct, doorLMat, doorRMat);
@@ -87,6 +167,58 @@ namespace StevesDoors
         {
             Matrix4x4 matrix = Matrix4x4.TRS(position, rotation, scale);
             Graphics.DrawMesh(MeshPool.plane10, matrix, material, 0);
+        }
+    }
+
+    public class Dialog_ManageAllowedFactions : Window
+    {
+        private Building_UnmirroredDoor Door;
+        private Vector2 ScrollPosition = Vector2.zero;
+
+        public Dialog_ManageAllowedFactions(Building_UnmirroredDoor door)
+        {
+            this.Door = door;
+            doCloseButton = true;
+            forcePause = true;
+            absorbInputAroundWindow = true;
+        }
+
+        public override Vector2 InitialSize => new Vector2(350f, 550f);
+
+        public override void DoWindowContents(Rect inRect)
+        {
+            Text.Font = GameFont.Small;
+
+            Widgets.Label(new Rect(0f, 0f, inRect.width, 30f), "Allowed Factions:");
+
+            float yOffset = 12f;
+            float lineHeight = 30f;
+            float contentHeight = DefDatabase<FactionDef>.AllDefsListForReading.Count * lineHeight;
+
+            Rect viewRect = new Rect(0f, 0f, inRect.width - 16f, contentHeight + 12f);
+
+            Widgets.BeginScrollView(new Rect(0f, 30f, inRect.width, inRect.height - 80f), ref ScrollPosition, viewRect);
+
+            foreach (Faction faction in Find.FactionManager.GetFactions(allowHidden: true, allowDefeated: false, allowNonHumanlike: true, minTechLevel: TechLevel.Undefined))
+            {
+                Rect factionRect = new Rect(0f, yOffset, inRect.width - 30f, lineHeight);
+                bool isFactionAllowed = Door.AllowedFactions.Contains(faction);
+
+                Widgets.CheckboxLabeled(factionRect, faction.Name, ref isFactionAllowed);
+
+                if (isFactionAllowed)
+                {
+                    Door.AllowedFactions.Add(faction);
+                }
+                else
+                {
+                    Door.AllowedFactions.Remove(faction);
+                }
+
+                yOffset += lineHeight;
+            }
+
+            Widgets.EndScrollView();
         }
     }
 }
