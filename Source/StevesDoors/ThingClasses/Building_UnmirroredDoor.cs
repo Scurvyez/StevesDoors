@@ -12,7 +12,13 @@ namespace StevesDoors
         private CompProperties_EnhancedDoorGraphics CompEnhancedDoor;
         private bool IsAccessDoor = false;
         public HashSet<Faction> AllowedFactions = new HashSet<Faction>();
-        
+
+        public Building_UnmirroredDoor()
+        {
+            // Add the player faction to the allowed factions by default
+            AllowedFactions.Add(Faction.OfPlayer);
+        }
+
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
@@ -24,27 +30,20 @@ namespace StevesDoors
             return AllowedFactions.Contains(faction);
         }
 
-        public override bool PawnCanOpen(Pawn p)
+        public override bool BlocksPawn(Pawn p)
         {
             if (IsAccessDoor)
             {
-                if (p.Faction == Faction.OfPlayer && !p.IsPrisonerOfColony)
-                {
-                    return true;
-                }
-                else if (p.Faction != null && AllowedForFaction(p.Faction))
-                {
-                    return true;
+                if (!AllowedForFaction(p.Faction))
+                { 
+                    return true; 
                 }
                 else
                 {
                     return false;
                 }
             }
-            else
-            {
-                return base.PawnCanOpen(p);
-            }
+            return base.BlocksPawn(p);
         }
 
         public override IEnumerable<Gizmo> GetGizmos()
