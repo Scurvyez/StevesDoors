@@ -2,6 +2,8 @@
 using Verse;
 using UnityEngine;
 using System.Collections.Generic;
+using Verse.AI;
+using System.Text;
 
 namespace StevesDoors
 {
@@ -10,8 +12,8 @@ namespace StevesDoors
     {
         public float OpenPct => Mathf.Clamp01((float)ticksSinceOpen / (float)TicksToOpenNow);
         private CompProperties_EnhancedDoorGraphics CompEnhancedDoor;
-        private bool IsAccessDoor = false;
-        public HashSet<Faction> AllowedFactions = new HashSet<Faction>();
+        public bool IsAccessDoor = false;
+        public List<Faction> AllowedFactions = new List<Faction>();
 
         public Building_UnmirroredDoor()
         {
@@ -25,17 +27,21 @@ namespace StevesDoors
             CompEnhancedDoor = def.GetCompProperties<CompProperties_EnhancedDoorGraphics>();
         }
 
-        private bool AllowedForFaction(Faction faction)
+        public bool AllowedForFaction(Faction faction)
         {
             return AllowedFactions.Contains(faction);
         }
 
+        /*
         public override bool BlocksPawn(Pawn p)
         {
             if (IsAccessDoor)
             {
                 if (!AllowedForFaction(p.Faction))
-                { 
+                {
+                    p.stances.stunner.StunFor(60, p, addBattleLog: false, showMote: false);
+                    p.jobs.EndCurrentJob(JobCondition.InterruptForced, startNewJob: false, canReturnToPool: true);
+                    p.jobs.ClearQueuedJobs();
                     return true; 
                 }
                 else
@@ -44,6 +50,26 @@ namespace StevesDoors
                 }
             }
             return base.BlocksPawn(p);
+        }
+        */
+
+        public override bool PawnCanOpen(Pawn p)
+        {
+            if (IsAccessDoor)
+            {
+                if (!AllowedForFaction(p.Faction))
+                {
+                    //p.stances.stunner.StunFor(60, p, addBattleLog: false, showMote: false);
+                    //p.jobs.EndCurrentJob(JobCondition.InterruptForced, startNewJob: false, canReturnToPool: true);
+                    //p.jobs.ClearQueuedJobs();
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            return base.PawnCanOpen(p);
         }
 
         public override IEnumerable<Gizmo> GetGizmos()
@@ -166,6 +192,36 @@ namespace StevesDoors
         {
             Matrix4x4 matrix = Matrix4x4.TRS(position, rotation, scale);
             Graphics.DrawMesh(MeshPool.plane10, matrix, material, 0);
+        }
+
+        public override string GetInspectString()
+        {
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.Append(base.GetInspectString());
+            if (IsAccessDoor && AllowedFactions != null && AllowedFactions.Count > 0)
+            {
+                stringBuilder.AppendLine();
+                stringBuilder.Append("Allowed Factions: ");
+
+                bool isFirst = true;
+                foreach (Faction faction in AllowedFactions) 
+                {
+                    if (!isFirst)
+                    {
+                        stringBuilder.Append(", ");
+                    }
+
+                    stringBuilder.Append(faction.Name);
+                    isFirst = false;
+                }
+            }
+            return stringBuilder.ToString();
+        }
+
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_Values.Look(ref IsAccessDoor, "IsAccessDoor", defaultValue: false);
         }
     }
 

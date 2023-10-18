@@ -4,6 +4,7 @@ namespace StevesDoors
 {
     public class GraphicDataEnhancedDoors : GraphicData
     {
+        public bool isVerticalDoor = false;
         public bool isLeftSideGraphic = false;
         public bool useGlowerColor = false;
         public bool shouldFade = false;
