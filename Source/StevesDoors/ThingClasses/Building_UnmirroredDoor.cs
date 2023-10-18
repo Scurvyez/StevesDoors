@@ -32,8 +32,7 @@ namespace StevesDoors
             return AllowedFactions.Contains(faction);
         }
 
-        /*
-        public override bool BlocksPawn(Pawn p)
+        public override bool PawnCanOpen(Pawn p)
         {
             if (IsAccessDoor)
             {
@@ -41,26 +40,6 @@ namespace StevesDoors
                 {
                     p.stances.stunner.StunFor(60, p, addBattleLog: false, showMote: false);
                     p.jobs.EndCurrentJob(JobCondition.InterruptForced, startNewJob: false, canReturnToPool: true);
-                    p.jobs.ClearQueuedJobs();
-                    return true; 
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            return base.BlocksPawn(p);
-        }
-        */
-
-        public override bool PawnCanOpen(Pawn p)
-        {
-            if (IsAccessDoor)
-            {
-                if (!AllowedForFaction(p.Faction))
-                {
-                    //p.stances.stunner.StunFor(60, p, addBattleLog: false, showMote: false);
-                    //p.jobs.EndCurrentJob(JobCondition.InterruptForced, startNewJob: false, canReturnToPool: true);
                     //p.jobs.ClearQueuedJobs();
                     return false;
                 }
@@ -107,18 +86,6 @@ namespace StevesDoors
         private void OpenManageFactionsDialog()
         {
             Find.WindowStack.Add(new Dialog_ManageAllowedFactions(this));
-        }
-
-        public void ToggleFactionAllowed(Faction faction)
-        {
-            if (AllowedFactions.Contains(faction))
-            {
-                AllowedFactions.Remove(faction);
-            }
-            else
-            {
-                AllowedFactions.Add(faction);
-            }
         }
 
         public override void Draw()
@@ -263,7 +230,10 @@ namespace StevesDoors
 
                 if (isFactionAllowed)
                 {
-                    Door.AllowedFactions.Add(faction);
+                    if (!Door.AllowedFactions.Contains(faction))
+                    {
+                        Door.AllowedFactions.Add(faction);
+                    }
                 }
                 else
                 {
