@@ -189,6 +189,7 @@ namespace StevesDoors
         {
             base.ExposeData();
             Scribe_Values.Look(ref IsAccessDoor, "IsAccessDoor", defaultValue: false);
+            Scribe_Collections.Look(ref AllowedFactions, "AllowedFactions", LookMode.Reference);
         }
     }
 
