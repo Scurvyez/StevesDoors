@@ -38,8 +38,8 @@ namespace StevesDoors
             {
                 if (!AllowedForFaction(p.Faction))
                 {
-                    p.stances.stunner.StunFor(60, p, addBattleLog: false, showMote: false);
-                    p.jobs.EndCurrentJob(JobCondition.InterruptForced, startNewJob: false, canReturnToPool: true);
+                    //p.stances.stunner.StunFor(60, p, addBattleLog: false, showMote: false);
+                    //p.jobs.EndCurrentJob(JobCondition.InterruptForced, startNewJob: false, canReturnToPool: true);
                     //p.jobs.ClearQueuedJobs();
                     return false;
                 }
