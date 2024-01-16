@@ -16,7 +16,6 @@
         </building>
         <researchPrerequisites>
             <li>Autodoors</li>
-            <li>ColoredLights</li>
         </researchPrerequisites>
         <costList>
             <Steel>10</Steel>
@@ -31,9 +30,10 @@
         </graphicData>
         <comps>
             <li Class="CompProperties_Forbiddable"/>
+            <li Class="CompProperties_Breakdownable"/>
             <li Class="CompProperties_Power">
-                <compClass>CompPowerTransmitter</compClass>
-                <transmitsPower>true</transmitsPower>
+                <compClass>CompPowerTrader</compClass>
+                <basePowerConsumption>50</basePowerConsumption>
             </li>
             <li Class="CompProperties_Glower">
                 <glowRadius>3</glowRadius>
@@ -85,9 +85,10 @@
         </building>
         <comps Inherit="False">
             <li Class="CompProperties_Forbiddable"/>
+            <li Class="CompProperties_Breakdownable"/>
             <li Class="CompProperties_Power">
-                <compClass>CompPowerTransmitter</compClass>
-                <transmitsPower>true</transmitsPower>
+                <compClass>CompPowerTrader</compClass>
+                <basePowerConsumption>50</basePowerConsumption>
             </li>
             <li Class="CompProperties_Glower">
                 <glowRadius>3</glowRadius>
@@ -139,9 +140,10 @@
         </building>
         <comps Inherit="False">
             <li Class="CompProperties_Forbiddable"/>
+            <li Class="CompProperties_Breakdownable"/>
             <li Class="CompProperties_Power">
-                <compClass>CompPowerTransmitter</compClass>
-                <transmitsPower>true</transmitsPower>
+                <compClass>CompPowerTrader</compClass>
+                <basePowerConsumption>50</basePowerConsumption>
             </li>
             <li Class="CompProperties_Glower">
                 <glowRadius>3</glowRadius>
@@ -194,9 +196,10 @@
         </building>
         <comps Inherit="False">
             <li Class="CompProperties_Forbiddable"/>
+            <li Class="CompProperties_Breakdownable"/>
             <li Class="CompProperties_Power">
-                <compClass>CompPowerTransmitter</compClass>
-                <transmitsPower>true</transmitsPower>
+                <compClass>CompPowerTrader</compClass>
+                <basePowerConsumption>50</basePowerConsumption>
             </li>
             <li Class="CompProperties_Glower">
                 <glowRadius>3</glowRadius>
@@ -269,9 +272,10 @@
         </building>
         <comps Inherit="False">
             <li Class="CompProperties_Forbiddable"/>
+            <li Class="CompProperties_Breakdownable"/>
             <li Class="CompProperties_Power">
-                <compClass>CompPowerTransmitter</compClass>
-                <transmitsPower>true</transmitsPower>
+                <compClass>CompPowerTrader</compClass>
+                <basePowerConsumption>50</basePowerConsumption>
             </li>
             <li Class="CompProperties_Glower">
                 <glowRadius>3</glowRadius>
@@ -323,9 +327,10 @@
         </building>
         <comps Inherit="False">
             <li Class="CompProperties_Forbiddable"/>
+            <li Class="CompProperties_Breakdownable"/>
             <li Class="CompProperties_Power">
-                <compClass>CompPowerTransmitter</compClass>
-                <transmitsPower>true</transmitsPower>
+                <compClass>CompPowerTrader</compClass>
+                <basePowerConsumption>50</basePowerConsumption>
             </li>
             <li Class="CompProperties_Glower">
                 <glowRadius>3</glowRadius>
@@ -377,9 +382,10 @@
         </building>
         <comps Inherit="False">
             <li Class="CompProperties_Forbiddable"/>
+            <li Class="CompProperties_Breakdownable"/>
             <li Class="CompProperties_Power">
-                <compClass>CompPowerTransmitter</compClass>
-                <transmitsPower>true</transmitsPower>
+                <compClass>CompPowerTrader</compClass>
+                <basePowerConsumption>50</basePowerConsumption>
             </li>
             <li Class="CompProperties_Glower">
                 <glowRadius>3</glowRadius>
@@ -431,9 +437,10 @@
         </building>
         <comps Inherit="False">
             <li Class="CompProperties_Forbiddable"/>
+            <li Class="CompProperties_Breakdownable"/>
             <li Class="CompProperties_Power">
-                <compClass>CompPowerTransmitter</compClass>
-                <transmitsPower>true</transmitsPower>
+                <compClass>CompPowerTrader</compClass>
+                <basePowerConsumption>50</basePowerConsumption>
             </li>
             <li Class="CompProperties_Glower">
                 <glowRadius>3</glowRadius>
@@ -514,9 +521,10 @@
         </building>
         <comps Inherit="False">
             <li Class="CompProperties_Forbiddable"/>
+            <li Class="CompProperties_Breakdownable"/>
             <li Class="CompProperties_Power">
-                <compClass>CompPowerTransmitter</compClass>
-                <transmitsPower>true</transmitsPower>
+                <compClass>CompPowerTrader</compClass>
+                <basePowerConsumption>50</basePowerConsumption>
             </li>
             <li Class="CompProperties_Glower">
                 <glowRadius>3</glowRadius>
@@ -549,45 +557,5 @@
             </li>
         </comps>
     </ThingDef>
-
-    <!--========================= Fake Wall Glass Door (1x1) =============================-->
-
-    <!-- <ThingDef ParentName="SD_GlassDoorDefault">
-        <defName>SD_GlassDoorFakeWall</defName>
-        <label>fake wall glass door (1x1)</label>
-        <uiIconPath>Things/Building/Door/SD_GlassDoorFakeWall_MenuIcon</uiIconPath>
-        <building>
-            <blueprintGraphicData>
-                <texPath>Things/Building/Door/SD_GlassDoorFakeWall_Blueprint</texPath>
-            </blueprintGraphicData>
-        </building>
-        <comps Inherit="False">
-            <li Class="CompProperties_Forbiddable"/>
-            <li Class="CompProperties_Power">
-                <compClass>CompPowerTransmitter</compClass>
-                <transmitsPower>true</transmitsPower>
-            </li>
-            <li Class="CompProperties_Glower">
-                <glowRadius>3</glowRadius>
-                <colorPickerEnabled>true</colorPickerEnabled>
-            </li>
-            <li Class="StevesDoors.CompProperties_EnhancedDoorGraphics">
-                <isIrisDoor>false</isIrisDoor>
-                <doorIrisMaxAngle>0</doorIrisMaxAngle>
-                <defaultDoorLeftGraphic>
-                    <texPath>Things/Building/Door/SD_GlassDoorFakeWallLeft</texPath>
-					<graphicClass>Graphic_Single</graphicClass>
-                    <shaderType>Transparent</shaderType>
-                    <drawSize>(1.0, 1.0)</drawSize>
-                </defaultDoorLeftGraphic>
-                <defaultDoorRightGraphic>
-                    <texPath>Things/Building/Door/SD_GlassDoorFakeWallRight</texPath>
-					<graphicClass>Graphic_Single</graphicClass>
-                    <shaderType>Transparent</shaderType>
-                    <drawSize>(1.0, 1.0)</drawSize>
-                </defaultDoorRightGraphic>
-            </li>
-        </comps>
-    </ThingDef> -->
 
 </Defs>

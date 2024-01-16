@@ -31,6 +31,7 @@ namespace StevesDoors
                     float fadeMultiplier = 1f - (Door.OpenPct * gD.fadeFactor);
                     Graphic graphic = gD.Graphic;
                     Material mat = graphic.MatSingle;
+                    //Material mat = graphic.GetColoredVersion(graphic.Shader, parent.DrawColor, parent.DrawColorTwo).MatSingle;
 
                     Vector3 moveDir;
                     float archFactor = gD.xMoveAmount * gD.archFactor;

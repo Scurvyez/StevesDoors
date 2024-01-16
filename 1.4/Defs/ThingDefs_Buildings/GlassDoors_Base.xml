@@ -24,10 +24,11 @@
         <constructionSkillPrerequisite>9</constructionSkillPrerequisite>
         <blockLight>false</blockLight>
         <drawerType>RealtimeOnly</drawerType>
+        <costStuffCount>1</costStuffCount>
         <statBases>
             <MaxHitPoints>750</MaxHitPoints>
             <Flammability>0.0</Flammability>
-            <WorkToBuild>900</WorkToBuild>
+            <WorkToBuild>1100</WorkToBuild>
             <MeditationFocusStrength>0.22</MeditationFocusStrength>
             <Beauty>1.25</Beauty>
         </statBases>

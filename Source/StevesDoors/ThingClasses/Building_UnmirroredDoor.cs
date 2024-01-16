@@ -12,13 +12,13 @@ namespace StevesDoors
     {
         public float OpenPct => Mathf.Clamp01((float)ticksSinceOpen / (float)TicksToOpenNow);
         private CompProperties_EnhancedDoorGraphics CompEnhancedDoor;
-        public bool IsAccessDoor = false;
-        public List<Faction> AllowedFactions = new List<Faction>();
+        //public bool IsAccessDoor = false;
+        //public List<Faction> AllowedFactions = new List<Faction>();
 
         public Building_UnmirroredDoor()
         {
             // Add the player faction to the allowed factions by default
-            AllowedFactions.Add(Faction.OfPlayer);
+            //AllowedFactions.Add(Faction.OfPlayer);
         }
 
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
@@ -27,11 +27,14 @@ namespace StevesDoors
             CompEnhancedDoor = def.GetCompProperties<CompProperties_EnhancedDoorGraphics>();
         }
 
+        /*
         public bool AllowedForFaction(Faction faction)
         {
             return AllowedFactions.Contains(faction);
         }
+        */
 
+        /*
         public override bool PawnCanOpen(Pawn p)
         {
             if (IsAccessDoor)
@@ -41,16 +44,15 @@ namespace StevesDoors
                     //p.stances.stunner.StunFor(60, p, addBattleLog: false, showMote: false);
                     //p.jobs.EndCurrentJob(JobCondition.InterruptForced, startNewJob: false, canReturnToPool: true);
                     //p.jobs.ClearQueuedJobs();
+
                     return false;
-                }
-                else
-                {
-                    return true;
                 }
             }
             return base.PawnCanOpen(p);
         }
+        */
 
+        /*
         public override IEnumerable<Gizmo> GetGizmos()
         {
             foreach (Gizmo gizmo in base.GetGizmos())
@@ -82,11 +84,14 @@ namespace StevesDoors
                 }
             }
         }
+        */
 
+        /*
         private void OpenManageFactionsDialog()
         {
             Find.WindowStack.Add(new Dialog_ManageAllowedFactions(this));
         }
+        */
 
         public override void Draw()
         {
@@ -100,6 +105,8 @@ namespace StevesDoors
                 GraphicDataEnhancedDoors gDR = CompEnhancedDoor.defaultDoorRightGraphic;
                 Material doorLMat = gDL.Graphic.MatSingle;
                 Material doorRMat = gDR.Graphic.MatSingle;
+                //Material doorLMat = gDL.Graphic.GetColoredVersion(gDL.Graphic.Shader, this.DrawColor, this.DrawColorTwo).MatSingle;
+                //Material doorRMat = gDR.Graphic.GetColoredVersion(gDR.Graphic.Shader, this.DrawColor, this.DrawColorTwo).MatSingle;
                 float xMoveAmountL = gDL.xMoveAmount;
                 float xMoveAmountR = gDR.xMoveAmount;
 
@@ -161,6 +168,7 @@ namespace StevesDoors
             Graphics.DrawMesh(MeshPool.plane10, matrix, material, 0);
         }
 
+        /*
         public override string GetInspectString()
         {
             StringBuilder stringBuilder = new StringBuilder();
@@ -184,15 +192,17 @@ namespace StevesDoors
             }
             return stringBuilder.ToString();
         }
+        */
 
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_Values.Look(ref IsAccessDoor, "IsAccessDoor", defaultValue: false);
-            Scribe_Collections.Look(ref AllowedFactions, "AllowedFactions", LookMode.Reference);
+            //Scribe_Values.Look(ref IsAccessDoor, "IsAccessDoor", defaultValue: false);
+            //Scribe_Collections.Look(ref AllowedFactions, "AllowedFactions", LookMode.Reference);
         }
     }
 
+    /*
     public class Dialog_ManageAllowedFactions : Window
     {
         private Building_UnmirroredDoor Door;
@@ -247,4 +257,5 @@ namespace StevesDoors
             Widgets.EndScrollView();
         }
     }
+    */
 }
