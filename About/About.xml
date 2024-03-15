@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <ModMetaData>
-    <name>Steves Doors</name>
+    <name>Steve's Doors</name>
     <author>Scurvyez</author>
     <packageId>Scurvyez.StevesDoors</packageId>
     <supportedVersions>
@@ -11,9 +11,9 @@
     <modIconPath>StevesDoors/modIcon</modIconPath>
 
     <description>
-Discord: steveo.o
-
 This mod adds some (9 currently) new doors to the game. Neon, semi-transparent, and glowing, mostly. One step closer to the full cyberpunk city vibe. This mod was made to pair with my other infrastructure mod, Steve's Walls.
-    </description>
+
+Discord: steveo.o    
+</description>
 
 </ModMetaData>

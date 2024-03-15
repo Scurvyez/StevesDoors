@@ -61,9 +61,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GraphicDataEnhancedDoors.cs" />
-    <Compile Include="Harmony\Pawn_PathFollowerTryEnterNextPathCell_Prefix.cs" />
-    <Compile Include="Harmony\HarmonyInstance.cs" />
+    <Compile Include="StevesDoorsMain.cs" />
+    <Compile Include="Utils\GraphicDataEnhancedDoors.cs" />
     <Compile Include="ThingClasses\Building_UnmirroredDoor.cs" />
     <Compile Include="ThingComps\CompExtraDoorGraphics.cs" />
     <Compile Include="ThingComps\CompEnhancedDoorGraphics.cs" />

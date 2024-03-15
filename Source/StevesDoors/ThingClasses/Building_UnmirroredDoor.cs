@@ -9,104 +9,29 @@ namespace StevesDoors
     {
         public new float OpenPct => Mathf.Clamp01((float)ticksSinceOpen / (float)TicksToOpenNow);
         private CompProperties_EnhancedDoorGraphics CompEnhancedDoor;
-        //public bool IsAccessDoor = false;
-        //public List<Faction> AllowedFactions = new List<Faction>();
-
-        public Building_UnmirroredDoor()
-        {
-            // Add the player faction to the allowed factions by default
-            //AllowedFactions.Add(Faction.OfPlayer);
-        }
+        private Rot4 UpdatedRotation;
 
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
             CompEnhancedDoor = def.GetCompProperties<CompProperties_EnhancedDoorGraphics>();
+            UpdatedRotation = DoorUtility.DoorRotationAt(Position, Map, false);
         }
 
-        /*
-        public bool AllowedForFaction(Faction faction)
+        protected override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
-            return AllowedFactions.Contains(faction);
-        }
-        */
-
-        /*
-        public override bool PawnCanOpen(Pawn p)
-        {
-            if (IsAccessDoor)
-            {
-                if (!AllowedForFaction(p.Faction))
-                {
-                    //p.stances.stunner.StunFor(60, p, addBattleLog: false, showMote: false);
-                    //p.jobs.EndCurrentJob(JobCondition.InterruptForced, startNewJob: false, canReturnToPool: true);
-                    //p.jobs.ClearQueuedJobs();
-
-                    return false;
-                }
-            }
-            return base.PawnCanOpen(p);
-        }
-        */
-
-        /*
-        public override IEnumerable<Gizmo> GetGizmos()
-        {
-            foreach (Gizmo gizmo in base.GetGizmos())
-            {
-                yield return gizmo;
-            }
-            
-            if (Faction == Faction.OfPlayer)
-            {
-                Command_Toggle command = new Command_Toggle();
-                command.defaultLabel = "Set Restrictions"; // make key
-                command.defaultDesc = "Set whether or not this door will act as a secure access point."; // make key
-                command.isActive = () => IsAccessDoor;
-                command.toggleAction = delegate
-                {
-                    IsAccessDoor = !IsAccessDoor;
-                };
-                command.icon = IsAccessDoor ? TexCommands.RestrictedAccess : TexCommands.UnrestrictedAccess;
-                yield return command;
-
-                if (IsAccessDoor)
-                {
-                    Command_Action manageGroupsCommand = new Command_Action();
-                    manageGroupsCommand.defaultLabel = "Allowed Factions"; // make key
-                    manageGroupsCommand.defaultDesc = "Set which factions are allowed to use this door."; // make key
-                    manageGroupsCommand.action = OpenManageFactionsDialog;
-                    manageGroupsCommand.icon = TexCommands.AllowedAccess;
-                    yield return manageGroupsCommand;
-                }
-            }
-        }
-        */
-
-        /*
-        private void OpenManageFactionsDialog()
-        {
-            Find.WindowStack.Add(new Dialog_ManageAllowedFactions(this));
-        }
-        */
-
-        public override void DynamicDrawPhaseAt(DrawPhase phase, Vector3 drawLoc, bool flip = false)
-        {
-            base.DynamicDrawPhaseAt(phase, drawLoc, flip);
-            Rotation = DoorUtility.DoorRotationAt(Position, Map, false);
-            Rot4 rotation = Rotation;
+            base.DrawAt(drawLoc, flip);
+            Rot4 rotation = UpdatedRotation;
             float curOpenPct = OpenPct;
 
             if (CompEnhancedDoor != null)
             {
                 GraphicDataEnhancedDoors gDL = CompEnhancedDoor.defaultDoorLeftGraphic;
                 GraphicDataEnhancedDoors gDR = CompEnhancedDoor.defaultDoorRightGraphic;
-                Material doorLMat = gDL.Graphic.MatSingle;
-                Material doorRMat = gDR.Graphic.MatSingle;
-                //Material doorLMat = gDL.Graphic.GetColoredVersion(gDL.Graphic.Shader, this.DrawColor, this.DrawColorTwo).MatSingle;
-                //Material doorRMat = gDR.Graphic.GetColoredVersion(gDR.Graphic.Shader, this.DrawColor, this.DrawColorTwo).MatSingle;
                 float xMoveAmountL = gDL.xMoveAmount;
                 float xMoveAmountR = gDR.xMoveAmount;
+                Material doorLMat = gDL.Graphic.MatSingle;
+                Material doorRMat = gDR.Graphic.MatSingle;
 
                 if (doorLMat != null && doorRMat != null)
                 {
@@ -135,7 +60,7 @@ namespace StevesDoors
         private void DrawDoor(Vector3 vector1, Vector3 vector2, float num, Material leftMat, Material rightMat)
         {
             float curOpenPct = OpenPct;
-            Rot4 rotation = Rotation;
+            Rot4 rotation = UpdatedRotation;
             Quaternion rotationQuat = rotation.AsQuat;
 
             Vector3 dDLS = CompEnhancedDoor.defaultDoorLeftGraphic.drawSize;
@@ -165,95 +90,5 @@ namespace StevesDoors
             Matrix4x4 matrix = Matrix4x4.TRS(position, rotation, scale);
             Graphics.DrawMesh(MeshPool.plane10, matrix, material, 0);
         }
-
-        /*
-        public override string GetInspectString()
-        {
-            StringBuilder stringBuilder = new StringBuilder();
-            stringBuilder.Append(base.GetInspectString());
-            if (IsAccessDoor && AllowedFactions != null && AllowedFactions.Count > 0)
-            {
-                stringBuilder.AppendLine();
-                stringBuilder.Append("Allowed Factions: ");
-
-                bool isFirst = true;
-                foreach (Faction faction in AllowedFactions) 
-                {
-                    if (!isFirst)
-                    {
-                        stringBuilder.Append(", ");
-                    }
-
-                    stringBuilder.Append(faction.Name);
-                    isFirst = false;
-                }
-            }
-            return stringBuilder.ToString();
-        }
-        */
-
-        public override void ExposeData()
-        {
-            base.ExposeData();
-            //Scribe_Values.Look(ref IsAccessDoor, "IsAccessDoor", defaultValue: false);
-            //Scribe_Collections.Look(ref AllowedFactions, "AllowedFactions", LookMode.Reference);
-        }
     }
-
-    /*
-    public class Dialog_ManageAllowedFactions : Window
-    {
-        private Building_UnmirroredDoor Door;
-        private Vector2 ScrollPosition = Vector2.zero;
-
-        public Dialog_ManageAllowedFactions(Building_UnmirroredDoor door)
-        {
-            this.Door = door;
-            doCloseButton = true;
-            forcePause = true;
-            absorbInputAroundWindow = true;
-        }
-
-        public override Vector2 InitialSize => new Vector2(350f, 550f);
-
-        public override void DoWindowContents(Rect inRect)
-        {
-            Text.Font = GameFont.Small;
-
-            Widgets.Label(new Rect(0f, 0f, inRect.width, 30f), "Allowed Factions:");
-
-            float yOffset = 12f;
-            float lineHeight = 30f;
-            float contentHeight = DefDatabase<FactionDef>.AllDefsListForReading.Count * lineHeight;
-
-            Rect viewRect = new Rect(0f, 0f, inRect.width - 16f, contentHeight + 12f);
-
-            Widgets.BeginScrollView(new Rect(0f, 30f, inRect.width, inRect.height - 80f), ref ScrollPosition, viewRect);
-
-            foreach (Faction faction in Find.FactionManager.GetFactions(allowHidden: true, allowDefeated: false, allowNonHumanlike: true, minTechLevel: TechLevel.Undefined))
-            {
-                Rect factionRect = new Rect(0f, yOffset, inRect.width - 30f, lineHeight);
-                bool isFactionAllowed = Door.AllowedFactions.Contains(faction);
-
-                Widgets.CheckboxLabeled(factionRect, faction.Name, ref isFactionAllowed);
-
-                if (isFactionAllowed)
-                {
-                    if (!Door.AllowedFactions.Contains(faction))
-                    {
-                        Door.AllowedFactions.Add(faction);
-                    }
-                }
-                else
-                {
-                    Door.AllowedFactions.Remove(faction);
-                }
-
-                yOffset += lineHeight;
-            }
-
-            Widgets.EndScrollView();
-        }
-    }
-    */
 }

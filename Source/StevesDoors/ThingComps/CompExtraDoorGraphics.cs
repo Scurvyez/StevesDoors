@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace StevesDoors
 {
+    [StaticConstructorOnStartup]
     public class CompExtraDoorGraphics : ThingComp
     {
         public CompProperties_ExtraDoorGraphics Props => (CompProperties_ExtraDoorGraphics)props;
@@ -109,5 +110,17 @@ namespace StevesDoors
         public List<GraphicDataEnhancedDoors> extraDoorGraphics = null;
 
         public CompProperties_ExtraDoorGraphics() => compClass = typeof(CompExtraDoorGraphics);
+
+        public override IEnumerable<string> ConfigErrors(ThingDef parentDef)
+        {
+            foreach (string error in base.ConfigErrors(parentDef))
+            {
+                yield return error;
+            }
+            if (extraDoorGraphics == null)
+            {
+                yield return "[<color=#4494E3FF>Steve's Doors</color>] <color=#e36c45FF>[CompProperties_ExtraDoorGraphics] No data found for <extraDoorGraphics>, please provide some.</color>";
+            }
+        }
     }
 }
