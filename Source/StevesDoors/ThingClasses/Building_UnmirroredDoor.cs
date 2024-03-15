@@ -1,16 +1,13 @@
 ﻿using RimWorld;
 using Verse;
 using UnityEngine;
-using System.Collections.Generic;
-using Verse.AI;
-using System.Text;
 
 namespace StevesDoors
 {
     [StaticConstructorOnStartup]
     public class Building_UnmirroredDoor : Building_Door
     {
-        public float OpenPct => Mathf.Clamp01((float)ticksSinceOpen / (float)TicksToOpenNow);
+        public new float OpenPct => Mathf.Clamp01((float)ticksSinceOpen / (float)TicksToOpenNow);
         private CompProperties_EnhancedDoorGraphics CompEnhancedDoor;
         //public bool IsAccessDoor = false;
         //public List<Faction> AllowedFactions = new List<Faction>();
@@ -93,9 +90,10 @@ namespace StevesDoors
         }
         */
 
-        public override void Draw()
+        public override void DynamicDrawPhaseAt(DrawPhase phase, Vector3 drawLoc, bool flip = false)
         {
-            Rotation = DoorRotationAt(Position, Map);
+            base.DynamicDrawPhaseAt(phase, drawLoc, flip);
+            Rotation = DoorUtility.DoorRotationAt(Position, Map, false);
             Rot4 rotation = Rotation;
             float curOpenPct = OpenPct;
 
