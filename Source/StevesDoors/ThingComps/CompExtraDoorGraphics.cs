@@ -4,12 +4,12 @@ using UnityEngine;
 
 namespace StevesDoors
 {
-    [StaticConstructorOnStartup]
     public class CompExtraDoorGraphics : ThingComp
     {
         public CompProperties_ExtraDoorGraphics Props => (CompProperties_ExtraDoorGraphics)props;
         private CompProperties_EnhancedDoorGraphics CompEnhancedDoor;
         public Building_UnmirroredDoor Door;
+        private Color laserDoorColor = new();
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
@@ -32,7 +32,6 @@ namespace StevesDoors
                     float fadeMultiplier = 1f - (Door.OpenPct * gD.fadeFactor);
                     Graphic graphic = gD.Graphic;
                     Material mat = graphic.MatSingle;
-                    //Material mat = graphic.GetColoredVersion(graphic.Shader, parent.DrawColor, parent.DrawColorTwo).MatSingle;
 
                     Vector3 moveDir;
                     float archFactor = gD.xMoveAmount * gD.archFactor;
@@ -83,7 +82,6 @@ namespace StevesDoors
                             moveDir = Vector3.zero;
                             break;
                     }
-
                     DrawExtraDoorGraphics(moveDir, gD.spinFactor, gD.shouldFade, fadeMultiplier, Door.OpenPct, mat, gD.drawSize);
                 }
             }
@@ -99,8 +97,14 @@ namespace StevesDoors
             float maxRotation = CompEnhancedDoor?.doorIrisMaxAngle ?? 0f;
             float rotationAngle = maxRotation * curOpenPct;
             Matrix4x4 matrix = Matrix4x4.TRS(drawPos, rotationQuat * Quaternion.Euler(0f, rotationAngle * spinFactor, 0f), new Vector3(drawSize.x, 1f, drawSize.y));
-
             Material finalMat = shouldFade ? FadedMaterialPool.FadedVersionOf(mat, opacity) : mat;
+
+            if (parent.def == SDDefOf.SD_LaserDoorDefault && StevesDoorsSettings.EnableLaserDoorRecoloring)
+            {
+                laserDoorColor = StevesDoorsSettings.LaserDoorColor;
+                finalMat.color = laserDoorColor;
+            }
+
             Graphics.DrawMesh(MeshPool.plane10, matrix, finalMat, 0);
         }
     }

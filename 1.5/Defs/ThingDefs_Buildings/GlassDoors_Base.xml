@@ -7,6 +7,7 @@
         <thingClass>Building_Door</thingClass>
         <category>Building</category>
         <altitudeLayer>DoorMoveable</altitudeLayer>
+        <useBlueprintGraphicAsGhost>true</useBlueprintGraphicAsGhost>
         <fillPercent>1</fillPercent>
         <useHitPoints>true</useHitPoints>
         <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
@@ -24,12 +25,12 @@
         <constructionSkillPrerequisite>9</constructionSkillPrerequisite>
         <blockLight>false</blockLight>
         <drawerType>RealtimeOnly</drawerType>
-        <costStuffCount>1</costStuffCount>
+        <costStuffCount>10</costStuffCount>
         <statBases>
             <MaxHitPoints>750</MaxHitPoints>
             <Flammability>0.0</Flammability>
             <WorkToBuild>1100</WorkToBuild>
-            <MeditationFocusStrength>0.22</MeditationFocusStrength>
+            <MeditationFocusStrength>0.02</MeditationFocusStrength>
             <Beauty>1.25</Beauty>
         </statBases>
         <building>
