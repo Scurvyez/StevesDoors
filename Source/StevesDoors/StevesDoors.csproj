@@ -66,6 +66,7 @@
     <Compile Include="Settings\StevesDoorsSettings.cs" />
     <Compile Include="StevesDoorsMain.cs" />
     <Compile Include="ThingClasses\Building_UnmirroredMultiTileDoor.cs" />
+    <Compile Include="ThingComps\CompExtraDoubleDoorGraphics.cs" />
     <Compile Include="Utils\HarmonyPatches.cs" />
     <Compile Include="Utils\SDDefOf.cs" />
     <Compile Include="Utils\GraphicDataEnhancedDoors.cs" />

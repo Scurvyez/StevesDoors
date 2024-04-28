@@ -537,7 +537,7 @@
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
                         <drawSize>(1.0, 1.0)</drawSize>
-                        <spinFactor>2.75</spinFactor>
+                        <spinFactor>0</spinFactor>
                         <shouldFade>true</shouldFade>
                         <fadeFactor>3.15</fadeFactor>
                         <useGlowerColor>true</useGlowerColor>
@@ -548,9 +548,105 @@
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
                         <drawSize>(1.0, 1.0)</drawSize>
-                        <spinFactor>4</spinFactor>
+                        <spinFactor>0</spinFactor>
                         <shouldFade>true</shouldFade>
                         <fadeFactor>3.15</fadeFactor>
+                        <useGlowerColor>true</useGlowerColor>
+                    </li>
+                </extraDoorGraphics>
+            </li>
+        </comps>
+    </ThingDef>
+
+    <ThingDef ParentName="DoorBase">
+        <defName>SD_LaserDoorDouble</defName>
+        <label>double laser door (2x1)</label>
+        <category>Building</category>
+        <designationCategory>Structure</designationCategory>
+        <designatorDropdown>SZ_GlassDoors</designatorDropdown>
+        <thingClass>StevesDoors.Building_UnmirroredMultiTileDoor</thingClass>
+        <statBases>
+            <WorkToBuild>15000</WorkToBuild>
+            <MaxHitPoints>250</MaxHitPoints>
+            <Beauty>30</Beauty>
+        </statBases>
+        <graphicData>
+            <texPath>StevesDoors/Things/Building/Door/SD_Blank</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>CutoutComplex</shaderType>
+            <damageData>
+                <enabled>false</enabled>
+            </damageData>
+        </graphicData>
+        <uiIconPath>StevesDoors/Things/Building/Door/SD_LaserDoorDefault_MenuIcon</uiIconPath>
+        <useBlueprintGraphicAsGhost>true</useBlueprintGraphicAsGhost>
+        <size>(2, 1)</size>
+        <rotatable>true</rotatable>
+        <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+        <researchPrerequisites>
+            <li>Autodoors</li>
+        </researchPrerequisites>
+        <costList>
+            <Steel>10</Steel>
+            <ComponentIndustrial>1</ComponentIndustrial>
+        </costList>
+        <building>
+            <blueprintClass>Blueprint_Build</blueprintClass>
+            <blueprintGraphicData>
+                <texPath>StevesDoors/Things/Building/Door/SD_LaserDoorDefault_MenuIcon</texPath>
+                <graphicClass>Graphic_Multi</graphicClass>
+                <shaderType>EdgeDetect</shaderType>
+                <drawSize>(1, 1)</drawSize>
+            </blueprintGraphicData>
+            <doorTopGraphic>
+                <texPath>StevesDoors/Things/Building/Door/SD_Blank</texPath>
+                <graphicClass>Graphic_Multi</graphicClass>
+                <drawSize>(1, 1)</drawSize>
+            </doorTopGraphic>
+            <doorSupportGraphic>
+                <texPath>StevesDoors/Things/Building/Door/SD_Blank</texPath>
+                <graphicClass>Graphic_Multi</graphicClass>
+                <drawSize>(1, 1)</drawSize>
+            </doorSupportGraphic>
+        </building>
+        <designationHotKey>Misc3</designationHotKey>
+        <placeWorkers>
+            <li>PlaceWorker_MultiCellDoor</li>
+        </placeWorkers>
+        <comps Inherit="False">
+            <li Class="CompProperties_Forbiddable"/>
+            <li Class="CompProperties_Breakdownable"/>
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerTrader</compClass>
+                <basePowerConsumption>50</basePowerConsumption>
+            </li>
+            <li Class="CompProperties_Glower">
+                <glowRadius>3</glowRadius>
+                <colorPickerEnabled>true</colorPickerEnabled>
+            </li>
+            <li Class="StevesDoors.CompProperties_ExtraDoubleDoorGraphics">
+                <extraDoorGraphics>
+                    <li>
+                        <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorLaserDoubleLeft</texPath>
+					    <graphicClass>Graphic_Single</graphicClass>
+                        <shaderType>Transparent</shaderType>
+                        <drawSize>(2.0, 1.0)</drawSize>
+                        <spinFactor>0</spinFactor>
+                        <shouldFade>true</shouldFade>
+                        <fadeFactor>1</fadeFactor>
+                        <xMoveAmount>2</xMoveAmount>
+                        <useGlowerColor>true</useGlowerColor>
+                        <isLeftSideGraphic>true</isLeftSideGraphic>
+                    </li>
+                    <li>
+                        <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorLaserDoubleRight</texPath>
+					    <graphicClass>Graphic_Single</graphicClass>
+                        <shaderType>Transparent</shaderType>
+                        <drawSize>(2.0, 1.0)</drawSize>
+                        <spinFactor>0</spinFactor>
+                        <shouldFade>true</shouldFade>
+                        <fadeFactor>1</fadeFactor>
+                        <xMoveAmount>2</xMoveAmount>
                         <useGlowerColor>true</useGlowerColor>
                     </li>
                 </extraDoorGraphics>
