@@ -26,9 +26,8 @@ namespace StevesDoors
             {
                 Rot4 rotation = parent.Rotation;
 
-                for (int i = 0; i < Props.extraDoorGraphics.Count; i++)
+                foreach (var gD in Props.extraDoorGraphics)
                 {
-                    GraphicDataEnhancedDoors gD = Props.extraDoorGraphics[i];
                     float fadeMultiplier = 1f - (Door.OpenPct * gD.fadeFactor);
                     Graphic graphic = gD.Graphic;
                     Material mat = graphic.MatSingle;
@@ -40,42 +39,34 @@ namespace StevesDoors
                     {
                         case 0: // door facing South
                             float xMoveS = gD.isLeftSideGraphic ? -gD.xMoveAmount : gD.xMoveAmount;
-
-                            float zMoveS;
-                            if (gD.shouldArch && gD.isLeftSideGraphic)
-                            {
-                                zMoveS = Mathf.Lerp(-archFactor, archFactor, Door.OpenPct);
-                            }
-                            else if (gD.shouldArch && !gD.isLeftSideGraphic)
-                            {
-                                zMoveS = Mathf.Lerp(archFactor, -archFactor, Door.OpenPct);
-                            }
-                            else
-                            {
-                                zMoveS = 0f;
-                            }
-
+                            float zMoveS = gD.shouldArch && gD.isLeftSideGraphic ? Mathf.Lerp(-archFactor, archFactor, Door.OpenPct) :
+                                          gD.shouldArch && !gD.isLeftSideGraphic ? Mathf.Lerp(archFactor, -archFactor, Door.OpenPct) :
+                                          0f;
                             moveDir = new Vector3(xMoveS, 0f, zMoveS);
                             break;
 
                         case 1: // door facing West
                             float zMoveW = gD.isLeftSideGraphic ? gD.xMoveAmount : -gD.xMoveAmount;
-
-                            float xMoveW;
-                            if (gD.shouldArch && gD.isLeftSideGraphic)
-                            {
-                                xMoveW = Mathf.Lerp(-archFactor, archFactor, Door.OpenPct);
-                            }
-                            else if (gD.shouldArch && !gD.isLeftSideGraphic)
-                            {
-                                xMoveW = Mathf.Lerp(archFactor, -archFactor, Door.OpenPct);
-                            }
-                            else
-                            {
-                                xMoveW = 0f;
-                            }
-
+                            float xMoveW = gD.shouldArch && gD.isLeftSideGraphic ? Mathf.Lerp(-archFactor, archFactor, Door.OpenPct) :
+                                          gD.shouldArch && !gD.isLeftSideGraphic ? Mathf.Lerp(archFactor, -archFactor, Door.OpenPct) :
+                                          0f;
                             moveDir = new Vector3(xMoveW, 0f, zMoveW);
+                            break;
+
+                        case 2: // door facing North
+                            float xMoveN = gD.isLeftSideGraphic ? gD.xMoveAmount : -gD.xMoveAmount;
+                            float zMoveN = gD.shouldArch && gD.isLeftSideGraphic ? Mathf.Lerp(archFactor, -archFactor, Door.OpenPct) :
+                                          gD.shouldArch && !gD.isLeftSideGraphic ? Mathf.Lerp(-archFactor, archFactor, Door.OpenPct) :
+                                          0f;
+                            moveDir = new Vector3(xMoveN, 0f, zMoveN);
+                            break;
+
+                        case 3: // door facing East
+                            float zMoveE = gD.isLeftSideGraphic ? -gD.xMoveAmount : gD.xMoveAmount;
+                            float xMoveE = gD.shouldArch && gD.isLeftSideGraphic ? Mathf.Lerp(archFactor, -archFactor, Door.OpenPct) :
+                                          gD.shouldArch && !gD.isLeftSideGraphic ? Mathf.Lerp(-archFactor, archFactor, Door.OpenPct) :
+                                          0f;
+                            moveDir = new Vector3(xMoveE, 0f, zMoveE);
                             break;
 
                         default:
@@ -87,12 +78,21 @@ namespace StevesDoors
             }
         }
 
+
         private void DrawExtraDoorGraphics(Vector3 xMoveAmount, float spinFactor, bool shouldFade, float opacity, float openPct, Material mat, Vector3 drawSize)
         {
             float curOpenPct = Door.OpenPct;
             Rot4 rotation = parent.Rotation;
             Quaternion rotationQuat = rotation.AsQuat;
             Vector3 drawPos = parent.DrawPos + xMoveAmount * openPct;
+
+            // Adjust draw size based on door def and open percentage (laser doors only)
+            if (parent.def == SDDefOf.SD_LaserDoorDouble && openPct > 0f)
+            {
+                // Calculate the new width based on the open percentage
+                float newWidth = drawSize.x * (1f - openPct);
+                drawSize.x = Mathf.Max(newWidth, 0.5f);
+            }
 
             float maxRotation = CompEnhancedDoor?.doorIrisMaxAngle ?? 0f;
             float rotationAngle = maxRotation * curOpenPct;

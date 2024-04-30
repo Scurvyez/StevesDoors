@@ -7,6 +7,7 @@ namespace StevesDoors
     public static class SDDefOf
     {
         public static ThingDef SD_LaserDoorDefault;
+        public static ThingDef SD_LaserDoorDouble;
 
         static SDDefOf()
         {
