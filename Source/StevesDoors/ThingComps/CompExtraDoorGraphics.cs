@@ -99,11 +99,13 @@ namespace StevesDoors
             Matrix4x4 matrix = Matrix4x4.TRS(drawPos, rotationQuat * Quaternion.Euler(0f, rotationAngle * spinFactor, 0f), new Vector3(drawSize.x, 1f, drawSize.y));
             Material finalMat = shouldFade ? FadedMaterialPool.FadedVersionOf(mat, opacity) : mat;
 
+            /*
             if (parent.def == SDDefOf.SD_LaserDoorDefault && StevesDoorsSettings.EnableLaserDoorRecoloring)
             {
                 laserDoorColor = StevesDoorsSettings.LaserDoorColor;
                 finalMat.color = laserDoorColor;
             }
+            */
 
             Graphics.DrawMesh(MeshPool.plane10, matrix, finalMat, 0);
         }

@@ -6,4 +6,9 @@
         <label>glass doors</label>
     </DesignatorDropdownGroupDef>
 
+    <DesignatorDropdownGroupDef>
+        <defName>SZ_GlassDoubleDoors</defName>
+        <label>glass double doors</label>
+    </DesignatorDropdownGroupDef>
+
 </Defs>

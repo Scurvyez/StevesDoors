@@ -9,7 +9,6 @@ namespace StevesDoors
         public CompProperties_ExtraDoubleDoorGraphics Props => (CompProperties_ExtraDoubleDoorGraphics)props;
         private CompProperties_EnhancedDoorGraphics CompEnhancedDoor;
         public Building_UnmirroredMultiTileDoor Door;
-        private Color laserDoorColor = new();
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
@@ -99,11 +98,23 @@ namespace StevesDoors
             Matrix4x4 matrix = Matrix4x4.TRS(drawPos, rotationQuat * Quaternion.Euler(0f, rotationAngle * spinFactor, 0f), new Vector3(drawSize.x, 1f, drawSize.y));
             Material finalMat = shouldFade ? FadedMaterialPool.FadedVersionOf(mat, opacity) : mat;
 
-            if (parent.def == SDDefOf.SD_LaserDoorDefault && StevesDoorsSettings.EnableLaserDoorRecoloring)
+            /*
+            if (StevesDoorsSettings.EnableLaserDoorRecoloring)
             {
-                laserDoorColor = StevesDoorsSettings.LaserDoorColor;
-                finalMat.color = laserDoorColor;
+                if (parent.def == SDDefOf.SD_LaserDoorDefault)
+                {
+                    Color laserDoorColor = new();
+                    laserDoorColor = StevesDoorsSettings.LaserDoorColor;
+                    finalMat.color = laserDoorColor;
+                }
+                else if (parent.def == SDDefOf.SD_LaserDoorDouble)
+                {
+                    Color laserDoubleDoorColor = new();
+                    laserDoubleDoorColor = StevesDoorsSettings.LaserDoorDoubleColor;
+                    finalMat.color = laserDoubleDoorColor;
+                }
             }
+            */
 
             Graphics.DrawMesh(MeshPool.plane10, matrix, finalMat, 0);
         }

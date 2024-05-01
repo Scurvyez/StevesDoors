@@ -3,13 +3,16 @@ using Verse;
 
 namespace StevesDoors
 {
+    /*
     public class StevesDoorsMod : Mod
     {
         StevesDoorsSettings settings;
         public static StevesDoorsMod mod;
 
         private Color tempLaserDoorColor;
+        private Color tempLaserDoorDoubleColor;
         private bool laserDoorColorDragging = false;
+        private bool laserDoorColorDoubleDragging = false;
 
         public StevesDoorsMod(ModContentPack content) : base(content)
         {
@@ -17,6 +20,7 @@ namespace StevesDoors
             settings = GetSettings<StevesDoorsSettings>();
 
             tempLaserDoorColor = settings._laserDoorColor;
+            tempLaserDoorDoubleColor = settings._laserDoorDoubleColor;
         }
 
         public override void DoSettingsWindowContents(Rect inRect)
@@ -43,11 +47,15 @@ namespace StevesDoors
                 Rect laserDoorRect = new Rect(viewRect.x + initialHorzOffset, viewRect.y + initialVertOffset, 1f, 1f);
                 DrawSettingWithTextures(laserDoorRect, "Laser Doors", ref tempLaserDoorColor, ref laserDoorColorDragging);
 
+                Rect laserDoorDoubleRect = new Rect(viewRect.x + (viewRect.width / 3), viewRect.y + initialVertOffset, 1f, 1f);
+                DrawSettingWithTextures(laserDoorDoubleRect, "Double Laser Doors", ref tempLaserDoorDoubleColor, ref laserDoorColorDoubleDragging);
+
                 list2.End();
             }
             else
             {
                 tempLaserDoorColor = settings._laserDoorColor;
+                tempLaserDoorDoubleColor = settings._laserDoorDoubleColor;
             }
 
             list.End();
@@ -74,6 +82,7 @@ namespace StevesDoors
         public override void WriteSettings()
         {
             settings._laserDoorColor = tempLaserDoorColor;
+            settings._laserDoorDoubleColor = tempLaserDoorDoubleColor;
 
             base.WriteSettings();
         }
@@ -83,4 +92,5 @@ namespace StevesDoors
             return "SD_ModName".Translate();
         }
     }
+    */
 }
