@@ -9,7 +9,7 @@ namespace StevesDoors
         public CompProperties_ExtraDoorGraphics Props => (CompProperties_ExtraDoorGraphics)props;
         private CompProperties_EnhancedDoorGraphics CompEnhancedDoor;
         public Building_UnmirroredDoor Door;
-        private Color laserDoorColor = new();
+        //private Color laserDoorColor = new();
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
