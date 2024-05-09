@@ -9,7 +9,6 @@ namespace StevesDoors
         public CompProperties_ExtraDoorGraphics Props => (CompProperties_ExtraDoorGraphics)props;
         private CompProperties_EnhancedDoorGraphics CompEnhancedDoor;
         public Building_UnmirroredDoor Door;
-        //private Color laserDoorColor = new();
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
@@ -98,15 +97,6 @@ namespace StevesDoors
             float rotationAngle = maxRotation * curOpenPct;
             Matrix4x4 matrix = Matrix4x4.TRS(drawPos, rotationQuat * Quaternion.Euler(0f, rotationAngle * spinFactor, 0f), new Vector3(drawSize.x, 1f, drawSize.y));
             Material finalMat = shouldFade ? FadedMaterialPool.FadedVersionOf(mat, opacity) : mat;
-
-            /*
-            if (parent.def == SDDefOf.SD_LaserDoorDefault && StevesDoorsSettings.EnableLaserDoorRecoloring)
-            {
-                laserDoorColor = StevesDoorsSettings.LaserDoorColor;
-                finalMat.color = laserDoorColor;
-            }
-            */
-
             Graphics.DrawMesh(MeshPool.plane10, matrix, finalMat, 0);
         }
     }
@@ -125,7 +115,7 @@ namespace StevesDoors
             }
             if (extraDoorGraphics == null)
             {
-                yield return "[<color=#4494E3FF>Steve's Doors</color>] <color=#e36c45FF>[CompProperties_ExtraDoorGraphics] No data found for <extraDoorGraphics>, please provide some.</color>";
+                yield return $"<color={SDLog.ErrorMsgCol}>[Steve's Doors]</color> [CompProperties_ExtraDoorGraphics] No data found for <extraDoorGraphics>, please provide some.";
             }
         }
     }

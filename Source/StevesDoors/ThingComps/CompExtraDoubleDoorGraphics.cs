@@ -77,7 +77,6 @@ namespace StevesDoors
             }
         }
 
-
         private void DrawExtraDoorGraphics(Vector3 xMoveAmount, float spinFactor, bool shouldFade, float opacity, float openPct, Material mat, Vector3 drawSize)
         {
             float curOpenPct = Door.OpenPct;
@@ -95,27 +94,9 @@ namespace StevesDoors
 
             float maxRotation = CompEnhancedDoor?.doorIrisMaxAngle ?? 0f;
             float rotationAngle = maxRotation * curOpenPct;
+
             Matrix4x4 matrix = Matrix4x4.TRS(drawPos, rotationQuat * Quaternion.Euler(0f, rotationAngle * spinFactor, 0f), new Vector3(drawSize.x, 1f, drawSize.y));
             Material finalMat = shouldFade ? FadedMaterialPool.FadedVersionOf(mat, opacity) : mat;
-
-            /*
-            if (StevesDoorsSettings.EnableLaserDoorRecoloring)
-            {
-                if (parent.def == SDDefOf.SD_LaserDoorDefault)
-                {
-                    Color laserDoorColor = new();
-                    laserDoorColor = StevesDoorsSettings.LaserDoorColor;
-                    finalMat.color = laserDoorColor;
-                }
-                else if (parent.def == SDDefOf.SD_LaserDoorDouble)
-                {
-                    Color laserDoubleDoorColor = new();
-                    laserDoubleDoorColor = StevesDoorsSettings.LaserDoorDoubleColor;
-                    finalMat.color = laserDoubleDoorColor;
-                }
-            }
-            */
-
             Graphics.DrawMesh(MeshPool.plane10, matrix, finalMat, 0);
         }
     }
@@ -134,7 +115,7 @@ namespace StevesDoors
             }
             if (extraDoorGraphics == null)
             {
-                yield return "[<color=#4494E3FF>Steve's Doors</color>] <color=#e36c45FF>[CompProperties_ExtraDoubleDoorGraphics] No data found for <extraDoorGraphics>, please provide some.</color>";
+                yield return $"<color={SDLog.ErrorMsgCol}>[Steve's Doors]</color> [CompProperties_ExtraDoubleDoorGraphics] No data found for <extraDoorGraphics>, please provide some.".Colorize(SDLog.ErrorMsgCol);
             }
         }
     }

@@ -5,7 +5,7 @@ using UnityEngine;
 namespace StevesDoors
 {
     [StaticConstructorOnStartup]
-    public static class AnimationFunctionsUtility
+    public static class EasingUtility
     {
         public static readonly Func<float, float> Linear = delegate (float x)
         {
