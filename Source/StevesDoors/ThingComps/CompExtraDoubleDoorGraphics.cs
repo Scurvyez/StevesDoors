@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using Verse;
 using UnityEngine;
-using RimWorld;
 
 namespace StevesDoors
 {
@@ -38,7 +37,7 @@ namespace StevesDoors
         {
             base.PostDraw();
 
-            if (Props.extraDoorGraphics != null)
+            if (Props != null && Props.extraDoorGraphics != null)
             {
                 foreach (var gD in Props.extraDoorGraphics)
                 {

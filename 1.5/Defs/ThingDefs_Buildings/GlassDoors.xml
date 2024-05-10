@@ -106,7 +106,7 @@
                     <drawSize>(1, 1)</drawSize>
                 </defaultDoorLeftGraphic>
                 <defaultDoorRightGraphic>
-                    <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorSlidingSingleRight</texPath>
+                    <texPath>StevesDoors/Things/Building/Door/SD_Blank</texPath>
 					<graphicClass>Graphic_Single</graphicClass>
                     <shaderType>Transparent</shaderType>
                     <drawSize>(1, 1)</drawSize>
@@ -163,7 +163,7 @@
                     <drawSize>(1, 1)</drawSize>
                 </defaultDoorLeftGraphic>
                 <defaultDoorRightGraphic>
-                    <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorRollingVaultSingleRight</texPath>
+                    <texPath>StevesDoors/Things/Building/Door/SD_Blank</texPath>
 					<graphicClass>Graphic_Single</graphicClass>
                     <shaderType>Transparent</shaderType>
                     <drawSize>(1, 1)</drawSize>
@@ -551,23 +551,29 @@
                     <li>
                         <texPath>StevesDoors/Things/Building/Door/SD_LaserDoorDefaultLeft</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
-                        <shaderType>Transparent</shaderType>
+                        <shaderType>MoteGlowDistorted</shaderType>
+                        <shaderParameters>
+                            <_DistortionTex>/Other/Ripples</_DistortionTex>
+                            <_distortionScrollSpeed>0.0025</_distortionScrollSpeed>
+                            <_distortionIntensity>0.0175</_distortionIntensity>
+                        </shaderParameters>
                         <drawSize>(1, 1)</drawSize>
-                        <spinFactor>0</spinFactor>
                         <shouldFade>true</shouldFade>
                         <fadeFactor>1</fadeFactor>
-                        <useGlowerColor>true</useGlowerColor>
                         <isLeftSideGraphic>true</isLeftSideGraphic>
                     </li>
                     <li>
                         <texPath>StevesDoors/Things/Building/Door/SD_LaserDoorDefaultRight</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
-                        <shaderType>Transparent</shaderType>
+                        <shaderType>MoteGlowDistorted</shaderType>
+                        <shaderParameters>
+                            <_DistortionTex>/Other/Ripples</_DistortionTex>
+                            <_distortionScrollSpeed>0.0025</_distortionScrollSpeed>
+                            <_distortionIntensity>0.0175</_distortionIntensity>
+                        </shaderParameters>
                         <drawSize>(1, 1)</drawSize>
-                        <spinFactor>0</spinFactor>
                         <shouldFade>true</shouldFade>
                         <fadeFactor>1</fadeFactor>
-                        <useGlowerColor>true</useGlowerColor>
                     </li>
                 </extraDoorGraphics>
             </li>
