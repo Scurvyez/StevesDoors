@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "S:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\StevesDoors\\Source\\StevesDoors\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{31808E9B-120C-4DE3-97D4-68F3EDB7BAD2}|StevesDoors.csproj|s:\\games\\steam\\steamapps\\common\\rimworld\\mods\\stevesdoors\\source\\stevesdoors\\thingclasses\\building_unmirroredmultitiledoor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{31808E9B-120C-4DE3-97D4-68F3EDB7BAD2}|StevesDoors.csproj|solutionrelative:thingclasses\\building_unmirroredmultitiledoor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{31808E9B-120C-4DE3-97D4-68F3EDB7BAD2}|StevesDoors.csproj|s:\\games\\steam\\steamapps\\common\\rimworld\\mods\\stevesdoors\\source\\stevesdoors\\utils\\dialogue_doorcolorpicker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{31808E9B-120C-4DE3-97D4-68F3EDB7BAD2}|StevesDoors.csproj|solutionrelative:utils\\dialogue_doorcolorpicker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{31808E9B-120C-4DE3-97D4-68F3EDB7BAD2}|StevesDoors.csproj|S:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\StevesDoors\\Source\\StevesDoors\\thingcomps\\compextradoubledoorgraphics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -17,14 +17,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{31808E9B-120C-4DE3-97D4-68F3EDB7BAD2}|StevesDoors.csproj|S:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\StevesDoors\\Source\\StevesDoors\\stevesdoorsmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{31808E9B-120C-4DE3-97D4-68F3EDB7BAD2}|StevesDoors.csproj|solutionrelative:stevesdoorsmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{31808E9B-120C-4DE3-97D4-68F3EDB7BAD2}|StevesDoors.csproj|S:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\StevesDoors\\Source\\StevesDoors\\thingcomps\\compenhanceddoorgraphics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{31808E9B-120C-4DE3-97D4-68F3EDB7BAD2}|StevesDoors.csproj|solutionrelative:thingcomps\\compenhanceddoorgraphics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{31808E9B-120C-4DE3-97D4-68F3EDB7BAD2}|StevesDoors.csproj|S:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\StevesDoors\\Source\\StevesDoors\\thingcomps\\compextradoorgraphics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{31808E9B-120C-4DE3-97D4-68F3EDB7BAD2}|StevesDoors.csproj|solutionrelative:thingcomps\\compextradoorgraphics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,48 +26,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Building_UnmirroredMultiTileDoor.cs",
-              "DocumentMoniker": "S:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\StevesDoors\\Source\\StevesDoors\\ThingClasses\\Building_UnmirroredMultiTileDoor.cs",
-              "RelativeDocumentMoniker": "ThingClasses\\Building_UnmirroredMultiTileDoor.cs",
-              "ToolTip": "S:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\StevesDoors\\Source\\StevesDoors\\ThingClasses\\Building_UnmirroredMultiTileDoor.cs",
-              "RelativeToolTip": "ThingClasses\\Building_UnmirroredMultiTileDoor.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-09T04:54:00.115Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CompEnhancedDoorGraphics.cs",
-              "DocumentMoniker": "S:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\StevesDoors\\Source\\StevesDoors\\ThingComps\\CompEnhancedDoorGraphics.cs",
-              "RelativeDocumentMoniker": "ThingComps\\CompEnhancedDoorGraphics.cs",
-              "ToolTip": "S:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\StevesDoors\\Source\\StevesDoors\\ThingComps\\CompEnhancedDoorGraphics.cs",
-              "RelativeToolTip": "ThingComps\\CompEnhancedDoorGraphics.cs",
-              "ViewState": "AQIAADIAAAAAAAAAAAAIwFUAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-08T17:04:27.881Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "StevesDoorsMain.cs",
-              "DocumentMoniker": "S:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\StevesDoors\\Source\\StevesDoors\\StevesDoorsMain.cs",
-              "RelativeDocumentMoniker": "StevesDoorsMain.cs",
-              "ToolTip": "S:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\StevesDoors\\Source\\StevesDoors\\StevesDoorsMain.cs",
-              "RelativeToolTip": "StevesDoorsMain.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-08T16:50:06.661Z"
             },
             {
               "$type": "Document",
@@ -87,7 +42,21 @@
               "RelativeToolTip": "Utils\\SDLog.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-08T16:10:54.279Z"
+              "WhenOpened": "2024-05-08T16:10:54.279Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "StevesDoorsMain.cs",
+              "DocumentMoniker": "S:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\StevesDoors\\Source\\StevesDoors\\StevesDoorsMain.cs",
+              "RelativeDocumentMoniker": "StevesDoorsMain.cs",
+              "ToolTip": "S:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\StevesDoors\\Source\\StevesDoors\\StevesDoorsMain.cs",
+              "RelativeToolTip": "StevesDoorsMain.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-08T16:50:06.661Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -97,21 +66,23 @@
               "RelativeDocumentMoniker": "ThingComps\\CompExtraDoubleDoorGraphics.cs",
               "ToolTip": "S:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\StevesDoors\\Source\\StevesDoors\\ThingComps\\CompExtraDoubleDoorGraphics.cs",
               "RelativeToolTip": "ThingComps\\CompExtraDoubleDoorGraphics.cs",
-              "ViewState": "AQIAAFkAAAAAAAAAAAAIwF4AAABJAAAA",
+              "ViewState": "AQIAAFYAAAAAAAAAAAAIwIwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-28T17:08:40.898Z"
+              "WhenOpened": "2024-04-28T17:08:40.898Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CompExtraDoorGraphics.cs",
-              "DocumentMoniker": "S:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\StevesDoors\\Source\\StevesDoors\\ThingComps\\CompExtraDoorGraphics.cs",
-              "RelativeDocumentMoniker": "ThingComps\\CompExtraDoorGraphics.cs",
-              "ToolTip": "S:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\StevesDoors\\Source\\StevesDoors\\ThingComps\\CompExtraDoorGraphics.cs",
-              "RelativeToolTip": "ThingComps\\CompExtraDoorGraphics.cs",
-              "ViewState": "AQIAAFgAAAAAAAAAAAAiwHUAAAAdAAAA",
+              "DocumentIndex": 0,
+              "Title": "Dialogue_DoorColorPicker.cs",
+              "DocumentMoniker": "S:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\StevesDoors\\Source\\StevesDoors\\Utils\\Dialogue_DoorColorPicker.cs",
+              "RelativeDocumentMoniker": "Utils\\Dialogue_DoorColorPicker.cs",
+              "ToolTip": "S:\\Games\\Steam\\steamapps\\common\\RimWorld\\Mods\\StevesDoors\\Source\\StevesDoors\\Utils\\Dialogue_DoorColorPicker.cs",
+              "RelativeToolTip": "Utils\\Dialogue_DoorColorPicker.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAA1wCoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-08T15:56:56.532Z"
+              "WhenOpened": "2024-05-09T15:54:25.026Z",
+              "EditorCaption": ""
             }
           ]
         }

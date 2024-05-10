@@ -70,15 +70,15 @@ namespace StevesDoors
             }
             if (defaultDoorLeftGraphic == null && defaultDoorRightGraphic == null)
             {
-                yield return $"<color={SDLog.ErrorMsgCol}>[Steve's Doors]</color> [CompProperties_EnhancedDoorGraphics] No textures found for <defaultDoorLeftGraphic> and <defaultDoorRightGraphic>, please provide both.".Colorize(SDLog.ErrorMsgCol);
+                yield return $"<color={SDLog.ErrorMsgCol}>[Steve's Doors]</color> [CompProperties_EnhancedDoorGraphics] No textures found for <defaultDoorLeftGraphic> and <defaultDoorRightGraphic>, please provide both.";
             }
             else if (defaultDoorLeftGraphic == null)
             {
-                yield return $"<color={SDLog.ErrorMsgCol}>[Steve's Doors]</color> [CompProperties_EnhancedDoorGraphics] No texture found for <defaultDoorLeftGraphic>, please provide one.".Colorize(SDLog.ErrorMsgCol);
+                yield return $"<color={SDLog.ErrorMsgCol}>[Steve's Doors]</color> [CompProperties_EnhancedDoorGraphics] No texture found for <defaultDoorLeftGraphic>, please provide one.";
             }
             else if (defaultDoorRightGraphic == null)
             {
-                yield return $"<color={SDLog.ErrorMsgCol}>[Steve's Doors]</color> [CompProperties_EnhancedDoorGraphics] No texture found for <defaultDoorRightGraphic>, please provide one.".Colorize(SDLog.ErrorMsgCol);
+                yield return $"<color={SDLog.ErrorMsgCol}>[Steve's Doors]</color> [CompProperties_EnhancedDoorGraphics] No texture found for <defaultDoorRightGraphic>, please provide one.";
             }
         }
     }

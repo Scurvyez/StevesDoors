@@ -46,26 +46,28 @@
                     <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorDefaultLeft</texPath>
 					<graphicClass>Graphic_Single</graphicClass>
                     <shaderType>Transparent</shaderType>
-                    <drawSize>(1.0, 1.0)</drawSize>
+                    <drawSize>(1, 1)</drawSize>
                 </defaultDoorLeftGraphic>
                 <defaultDoorRightGraphic>
                     <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorDefaultRight</texPath>
 					<graphicClass>Graphic_Single</graphicClass>
                     <shaderType>Transparent</shaderType>
-                    <drawSize>(1.0, 1.0)</drawSize>
+                    <drawSize>(1, 1)</drawSize>
                 </defaultDoorRightGraphic>
                 <extraStaticDoorGraphics>
                     <li>
                         <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorDefaultLeftFrame</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
-                        <drawSize>(1.0, 1.0)</drawSize>
+                        <drawSize>(1, 1)</drawSize>
+                        <drawOffset>(0, 0.02, 0)</drawOffset>
                     </li>
                     <li>
                         <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorDefaultRightFrame</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
-                        <drawSize>(1.0, 1.0)</drawSize>
+                        <drawSize>(1, 1)</drawSize>
+                        <drawOffset>(0, 0.02, 0)</drawOffset>
                     </li>
                 </extraStaticDoorGraphics>
             </li>
@@ -101,26 +103,28 @@
                     <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorSlidingSingleLeft</texPath>
 					<graphicClass>Graphic_Single</graphicClass>
                     <shaderType>Transparent</shaderType>
-                    <drawSize>(1.0, 1.0)</drawSize>
+                    <drawSize>(1, 1)</drawSize>
                 </defaultDoorLeftGraphic>
                 <defaultDoorRightGraphic>
                     <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorSlidingSingleRight</texPath>
 					<graphicClass>Graphic_Single</graphicClass>
                     <shaderType>Transparent</shaderType>
-                    <drawSize>(1.0, 1.0)</drawSize>
+                    <drawSize>(1, 1)</drawSize>
                 </defaultDoorRightGraphic>
                 <extraStaticDoorGraphics>
                     <li>
                         <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorDefaultLeftFrame</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
-                        <drawSize>(1.0, 1.0)</drawSize>
+                        <drawSize>(1, 1)</drawSize>
+                        <drawOffset>(0, 0.02, 0)</drawOffset>
                     </li>
                     <li>
                         <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorDefaultRightFrame</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
-                        <drawSize>(1.0, 1.0)</drawSize>
+                        <drawSize>(1, 1)</drawSize>
+                        <drawOffset>(0, 0.02, 0)</drawOffset>
                     </li>
                 </extraStaticDoorGraphics>
             </li>
@@ -156,26 +160,28 @@
                     <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorRollingVaultSingleLeft</texPath>
 					<graphicClass>Graphic_Single</graphicClass>
                     <shaderType>Transparent</shaderType>
-                    <drawSize>(1.0, 1.0)</drawSize>
+                    <drawSize>(1, 1)</drawSize>
                 </defaultDoorLeftGraphic>
                 <defaultDoorRightGraphic>
                     <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorRollingVaultSingleRight</texPath>
 					<graphicClass>Graphic_Single</graphicClass>
                     <shaderType>Transparent</shaderType>
-                    <drawSize>(1.0, 1.0)</drawSize>
+                    <drawSize>(1, 1)</drawSize>
                 </defaultDoorRightGraphic>
                 <extraStaticDoorGraphics>
                     <li>
                         <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorDefaultLeftFrame</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
-                        <drawSize>(1.0, 1.0)</drawSize>
+                        <drawSize>(1, 1)</drawSize>
+                        <drawOffset>(0, 0.02, 0)</drawOffset>
                     </li>
                     <li>
                         <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorDefaultRightFrame</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
-                        <drawSize>(1.0, 1.0)</drawSize>
+                        <drawSize>(1, 1)</drawSize>
+                        <drawOffset>(0, 0.02, 0)</drawOffset>
                     </li>
                 </extraStaticDoorGraphics>
             </li>
@@ -212,26 +218,28 @@
                     <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorAngledFadingLeft</texPath>
 					<graphicClass>Graphic_Single</graphicClass>
                     <shaderType>Transparent</shaderType>
-                    <drawSize>(1.0, 1.0)</drawSize>
+                    <drawSize>(1, 1)</drawSize>
                 </defaultDoorLeftGraphic>
                 <defaultDoorRightGraphic>
                     <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorAngledFadingRight</texPath>
 					<graphicClass>Graphic_Single</graphicClass>
                     <shaderType>Transparent</shaderType>
-                    <drawSize>(1.0, 1.0)</drawSize>
+                    <drawSize>(1, 1)</drawSize>
                 </defaultDoorRightGraphic>
                 <extraStaticDoorGraphics>
                     <li>
                         <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorDefaultLeftFrame</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
-                        <drawSize>(1.0, 1.0)</drawSize>
+                        <drawSize>(1, 1)</drawSize>
+                        <drawOffset>(0, 0.02, 0)</drawOffset>
                     </li>
                     <li>
                         <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorDefaultRightFrame</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
-                        <drawSize>(1.0, 1.0)</drawSize>
+                        <drawSize>(1, 1)</drawSize>
+                        <drawOffset>(0, 0.02, 0)</drawOffset>
                     </li>
                 </extraStaticDoorGraphics>
             </li>
@@ -241,7 +249,7 @@
                         <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorAngledFadingAuxLeft</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
-                        <drawSize>(1.0, 1.0)</drawSize>
+                        <drawSize>(1, 1)</drawSize>
                         <shouldFade>true</shouldFade>
                         <fadeFactor>3.55</fadeFactor>
                         <isLeftSideGraphic>true</isLeftSideGraphic>
@@ -250,7 +258,7 @@
                         <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorAngledFadingAuxRight</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
-                        <drawSize>(1.0, 1.0)</drawSize>
+                        <drawSize>(1, 1)</drawSize>
                         <shouldFade>true</shouldFade>
                         <fadeFactor>3.55</fadeFactor>
                     </li>
@@ -288,26 +296,28 @@
                     <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorArrowLeft</texPath>
 					<graphicClass>Graphic_Single</graphicClass>
                     <shaderType>Transparent</shaderType>
-                    <drawSize>(1.0, 1.0)</drawSize>
+                    <drawSize>(1, 1)</drawSize>
                 </defaultDoorLeftGraphic>
                 <defaultDoorRightGraphic>
                     <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorArrowRight</texPath>
 					<graphicClass>Graphic_Single</graphicClass>
                     <shaderType>Transparent</shaderType>
-                    <drawSize>(1.0, 1.0)</drawSize>
+                    <drawSize>(1, 1)</drawSize>
                 </defaultDoorRightGraphic>
                 <extraStaticDoorGraphics>
                     <li>
                         <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorDefaultLeftFrame</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
-                        <drawSize>(1.0, 1.0)</drawSize>
+                        <drawSize>(1, 1)</drawSize>
+                        <drawOffset>(0, 0.02, 0)</drawOffset>
                     </li>
                     <li>
                         <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorDefaultRightFrame</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
-                        <drawSize>(1.0, 1.0)</drawSize>
+                        <drawSize>(1, 1)</drawSize>
+                        <drawOffset>(0, 0.02, 0)</drawOffset>
                     </li>
                 </extraStaticDoorGraphics>
             </li>
@@ -343,26 +353,28 @@
                     <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorSlantedLeft</texPath>
 					<graphicClass>Graphic_Single</graphicClass>
                     <shaderType>Transparent</shaderType>
-                    <drawSize>(1.0, 1.0)</drawSize>
+                    <drawSize>(1, 1)</drawSize>
                 </defaultDoorLeftGraphic>
                 <defaultDoorRightGraphic>
                     <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorSlantedRight</texPath>
 					<graphicClass>Graphic_Single</graphicClass>
                     <shaderType>Transparent</shaderType>
-                    <drawSize>(1.0, 1.0)</drawSize>
+                    <drawSize>(1, 1)</drawSize>
                 </defaultDoorRightGraphic>
                 <extraStaticDoorGraphics>
                     <li>
                         <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorDefaultLeftFrame</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
-                        <drawSize>(1.0, 1.0)</drawSize>
+                        <drawSize>(1, 1)</drawSize>
+                        <drawOffset>(0, 0.02, 0)</drawOffset>
                     </li>
                     <li>
                         <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorDefaultRightFrame</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
-                        <drawSize>(1.0, 1.0)</drawSize>
+                        <drawSize>(1, 1)</drawSize>
+                        <drawOffset>(0, 0.02, 0)</drawOffset>
                     </li>
                 </extraStaticDoorGraphics>
             </li>
@@ -398,26 +410,28 @@
                     <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorIrisLeft</texPath>
 					<graphicClass>Graphic_Single</graphicClass>
                     <shaderType>Transparent</shaderType>
-                    <drawSize>(1.0, 1.0)</drawSize>
+                    <drawSize>(1, 1)</drawSize>
                 </defaultDoorLeftGraphic>
                 <defaultDoorRightGraphic>
                     <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorIrisRight</texPath>
 					<graphicClass>Graphic_Single</graphicClass>
                     <shaderType>Transparent</shaderType>
-                    <drawSize>(1.0, 1.0)</drawSize>
+                    <drawSize>(1, 1)</drawSize>
                 </defaultDoorRightGraphic>
                 <extraStaticDoorGraphics>
                     <li>
                         <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorIrisLeftFrame</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
-                        <drawSize>(1.0, 1.0)</drawSize>
+                        <drawSize>(1, 1)</drawSize>
+                        <drawOffset>(0, 0.02, 0)</drawOffset>
                     </li>
                     <li>
                         <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorIrisRightFrame</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
-                        <drawSize>(1.0, 1.0)</drawSize>
+                        <drawSize>(1, 1)</drawSize>
+                        <drawOffset>(0, 0.02, 0)</drawOffset>
                     </li>
                 </extraStaticDoorGraphics>
             </li>
@@ -453,26 +467,28 @@
                     <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorIrisEnhancedLeft</texPath>
 					<graphicClass>Graphic_Single</graphicClass>
                     <shaderType>Transparent</shaderType>
-                    <drawSize>(1.0, 1.0)</drawSize>
+                    <drawSize>(1, 1)</drawSize>
                 </defaultDoorLeftGraphic>
                 <defaultDoorRightGraphic>
                     <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorIrisEnhancedRight</texPath>
 					<graphicClass>Graphic_Single</graphicClass>
                     <shaderType>Transparent</shaderType>
-                    <drawSize>(1.0, 1.0)</drawSize>
+                    <drawSize>(1, 1)</drawSize>
                 </defaultDoorRightGraphic>
                 <extraStaticDoorGraphics>
                     <li>
                         <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorIrisLeftFrame</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
-                        <drawSize>(1.0, 1.0)</drawSize>
+                        <drawSize>(1, 1)</drawSize>
+                        <drawOffset>(0, 0.02, 0)</drawOffset>
                     </li>
                     <li>
                         <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorIrisRightFrame</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
-                        <drawSize>(1.0, 1.0)</drawSize>
+                        <drawSize>(1, 1)</drawSize>
+                        <drawOffset>(0, 0.02, 0)</drawOffset>
                     </li>
                 </extraStaticDoorGraphics>
             </li>
@@ -482,7 +498,7 @@
                         <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorIrisInnerEnhancedLeft</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
-                        <drawSize>(1.0, 1.0)</drawSize>
+                        <drawSize>(1, 1)</drawSize>
                         <xMoveAmount>1</xMoveAmount>
                         <spinFactor>2.75</spinFactor>
                         <shouldFade>true</shouldFade>
@@ -495,7 +511,7 @@
                         <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorIrisInnerEnhancedRight</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
-                        <drawSize>(1.0, 1.0)</drawSize>
+                        <drawSize>(1, 1)</drawSize>
                         <xMoveAmount>1</xMoveAmount>
                         <spinFactor>4</spinFactor>
                         <shouldFade>true</shouldFade>
@@ -536,7 +552,7 @@
                         <texPath>StevesDoors/Things/Building/Door/SD_LaserDoorDefaultLeft</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
-                        <drawSize>(1.0, 1.0)</drawSize>
+                        <drawSize>(1, 1)</drawSize>
                         <spinFactor>0</spinFactor>
                         <shouldFade>true</shouldFade>
                         <fadeFactor>1</fadeFactor>
@@ -547,7 +563,7 @@
                         <texPath>StevesDoors/Things/Building/Door/SD_LaserDoorDefaultRight</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
-                        <drawSize>(1.0, 1.0)</drawSize>
+                        <drawSize>(1, 1)</drawSize>
                         <spinFactor>0</spinFactor>
                         <shouldFade>true</shouldFade>
                         <fadeFactor>1</fadeFactor>

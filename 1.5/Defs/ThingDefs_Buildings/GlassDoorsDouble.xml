@@ -56,9 +56,13 @@
                     <li>
                         <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorLaserDoubleLeft</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
-                        <shaderType>Transparent</shaderType>
+                        <shaderType>MoteGlowDistorted</shaderType>
+                        <shaderParameters>
+                            <_DistortionTex>/Other/Ripples</_DistortionTex>
+                            <_distortionScrollSpeed>0.0025</_distortionScrollSpeed>
+                            <_distortionIntensity>0.0175</_distortionIntensity>
+                        </shaderParameters>
                         <drawSize>(2, 2)</drawSize>
-                        <spinFactor>0</spinFactor>
                         <shouldFade>true</shouldFade>
                         <fadeFactor>1</fadeFactor>
                         <xMoveAmount>2</xMoveAmount>
@@ -68,9 +72,13 @@
                     <li>
                         <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorLaserDoubleRight</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
-                        <shaderType>Transparent</shaderType>
+                        <shaderType>MoteGlowDistorted</shaderType>
+                        <shaderParameters>
+                            <_DistortionTex>/Other/Ripples</_DistortionTex>
+                            <_distortionScrollSpeed>0.0025</_distortionScrollSpeed>
+                            <_distortionIntensity>0.0175</_distortionIntensity>
+                        </shaderParameters>
                         <drawSize>(2, 2)</drawSize>
-                        <spinFactor>0</spinFactor>
                         <shouldFade>true</shouldFade>
                         <fadeFactor>1</fadeFactor>
                         <xMoveAmount>2</xMoveAmount>
@@ -152,12 +160,14 @@
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
                         <drawSize>(2, 2)</drawSize>
+                        <drawOffset>(0, 0.02, 0)</drawOffset>
                     </li>
                     <li>
                         <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorDoubleDefaultRightFrame</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
                         <drawSize>(2, 2)</drawSize>
+                        <drawOffset>(0, 0.02, 0)</drawOffset>
                     </li>
                 </extraStaticDoorGraphics>
             </li>
@@ -297,12 +307,14 @@
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
                         <drawSize>(2, 2)</drawSize>
+                        <drawOffset>(0, 0.02, 0)</drawOffset>
                     </li>
                     <li>
                         <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorDoubleDefaultRightFrame</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
                         <drawSize>(2, 2)</drawSize>
+                        <drawOffset>(0, 0.02, 0)</drawOffset>
                     </li>
                 </extraStaticDoorGraphics>
             </li>
@@ -398,12 +410,14 @@
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
                         <drawSize>(2, 2)</drawSize>
+                        <drawOffset>(0, 0.02, 0)</drawOffset>
                     </li>
                     <li>
                         <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorDoubleDefaultRightFrame</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
                         <drawSize>(2, 2)</drawSize>
+                        <drawOffset>(0, 0.02, 0)</drawOffset>
                     </li>
                 </extraStaticDoorGraphics>
             </li>
@@ -514,30 +528,42 @@
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
                         <drawSize>(2, 2)</drawSize>
+                        <drawOffset>(0, 0.02, 0)</drawOffset>
                     </li>
                     <li>
                         <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorDoubleDefaultRightFrame</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
                         <drawSize>(2, 2)</drawSize>
+                        <drawOffset>(0, 0.02, 0)</drawOffset>
                     </li>
                 </extraStaticDoorGraphics>
             </li>
             <li Class="StevesDoors.CompProperties_ExtraDoubleDoorGraphics">
                 <extraDoorGraphics>
                     <li>
-                        <texPath>StevesDoors/Things/Building/Door/SD_TESTINGLEFT</texPath>
+                        <texPath>StevesDoors/Things/Building/Door/SD_TESTINGLEFTBLURRED</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
-                        <shaderType>TransparentPostLight</shaderType>
+                        <shaderType>MoteGlowDistorted</shaderType>
+                        <shaderParameters>
+                            <_DistortionTex>/Other/Ripples</_DistortionTex>
+                            <_distortionScrollSpeed>0.0025</_distortionScrollSpeed>
+                            <_distortionIntensity>0.01</_distortionIntensity>
+                        </shaderParameters>
                         <drawSize>(2, 2)</drawSize>
                         <xMoveAmount>1</xMoveAmount>
                         <color>(0, 0.9, 0.35)</color>
                         <isLeftSideGraphic>true</isLeftSideGraphic>
                     </li>
                     <li>
-                        <texPath>StevesDoors/Things/Building/Door/SD_TESTINGRIGHT</texPath>
+                        <texPath>StevesDoors/Things/Building/Door/SD_TESTINGRIGHTBLURRED</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
-                        <shaderType>TransparentPostLight</shaderType>
+                        <shaderType>MoteGlowDistorted</shaderType>
+                        <shaderParameters>
+                            <_DistortionTex>/Other/Ripples</_DistortionTex>
+                            <_distortionScrollSpeed>0.0025</_distortionScrollSpeed>
+                            <_distortionIntensity>0.01</_distortionIntensity>
+                        </shaderParameters>
                         <drawSize>(2, 2)</drawSize>
                         <xMoveAmount>1</xMoveAmount>
                         <color>(0, 0.9, 0.35)</color>
