@@ -540,31 +540,35 @@
             <li Class="StevesDoors.CompProperties_ExtraDoubleDoorGraphics">
                 <extraDoorGraphics>
                     <li>
-                        <texPath>StevesDoors/Things/Building/Door/SD_TESTINGLEFTBLURRED</texPath>
+                        <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorIrisEnhancedDoubleBaseLeft</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
-                        <shaderType>MoteGlowDistorted</shaderType>
-                        <shaderParameters>
-                            <_DistortionTex>/Other/Ripples</_DistortionTex>
-                            <_distortionScrollSpeed>0.0025</_distortionScrollSpeed>
-                            <_distortionIntensity>0.01</_distortionIntensity>
-                        </shaderParameters>
+                        <shaderType>Transparent</shaderType>
                         <drawSize>(2, 2)</drawSize>
                         <xMoveAmount>1</xMoveAmount>
-                        <color>(0, 0.9, 0.35)</color>
                         <isLeftSideGraphic>true</isLeftSideGraphic>
                     </li>
                     <li>
-                        <texPath>StevesDoors/Things/Building/Door/SD_TESTINGRIGHTBLURRED</texPath>
+                        <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorIrisEnhancedDoubleBaseRight</texPath>
+					    <graphicClass>Graphic_Single</graphicClass>
+                        <shaderType>Transparent</shaderType>
+                        <drawSize>(2, 2)</drawSize>
+                        <xMoveAmount>1</xMoveAmount>
+                    </li>
+                    <li>
+                        <texPath>StevesDoors/Things/Building/Door/SD_TESTINGCenterGradientTex</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>MoteGlowDistorted</shaderType>
                         <shaderParameters>
                             <_DistortionTex>/Other/Ripples</_DistortionTex>
                             <_distortionScrollSpeed>0.0025</_distortionScrollSpeed>
-                            <_distortionIntensity>0.01</_distortionIntensity>
+                            <_distortionIntensity>0.0175</_distortionIntensity>
                         </shaderParameters>
                         <drawSize>(2, 2)</drawSize>
-                        <xMoveAmount>1</xMoveAmount>
+                        <xMoveAmount>0</xMoveAmount>
+                        <shouldFade>true</shouldFade>
+                        <fadeFactor>1</fadeFactor>
                         <color>(0, 0.9, 0.35)</color>
+                        <isLeftSideGraphic>true</isLeftSideGraphic>
                     </li>
                 </extraDoorGraphics>
             </li>

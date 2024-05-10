@@ -108,10 +108,14 @@ namespace StevesDoors
             Matrix4x4 matrix = Matrix4x4.TRS(drawPos, _rotation.AsQuat * Quaternion.Euler(0f, rotationAngle * spinFactor, 0f), new Vector3(drawSize.x, 1f, drawSize.y));
             Material finalMat = shouldFade ? FadedMaterialPool.FadedVersionOf(mat, opacity) : mat;
 
+            _mPB.Clear();
             if (_isLaserDoor)
             {
-                _mPB.Clear();
                 _mPB.SetColor("_Color", new Color(_doorColor.r, _doorColor.g, _doorColor.b, opacity));
+            }
+            else
+            {
+                _mPB.SetColor("_Color", new Color(mat.color.r, mat.color.g, mat.color.b, opacity));
             }
             Graphics.DrawMesh(MeshPool.plane10, matrix, finalMat, 0, null, 0, _mPB);
         }
