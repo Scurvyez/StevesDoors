@@ -1,7 +1,6 @@
 ﻿using System;
 using UnityEngine;
 using Verse;
-using Verse.Noise;
 
 namespace StevesDoors
 {

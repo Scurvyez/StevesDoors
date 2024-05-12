@@ -9,7 +9,7 @@
         <size>(2, 1)</size>
         <designatorDropdown>SZ_GlassDoubleDoors</designatorDropdown>
         <thingClass>StevesDoors.Building_UnmirroredMultiTileDoor</thingClass>
-        <uiIconPath>StevesDoors/Things/Building/Door/SD_LaserDoorDefault_MenuIcon</uiIconPath>
+        <uiIconPath>StevesDoors/Things/Building/DoorsDouble/Laser/SD_LaserDoorDouble_MenuIcon</uiIconPath>
         <statBases>
             <WorkToBuild>15000</WorkToBuild>
             <MaxHitPoints>750</MaxHitPoints>
@@ -25,21 +25,26 @@
         <building>
             <blueprintClass>Blueprint_Build</blueprintClass>
             <blueprintGraphicData>
-                <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorLaserDouble_Blueprint</texPath>
+                <texPath>StevesDoors/Things/Building/DoorsDouble/Laser/SD_GlassDoorLaserDouble_Blueprint</texPath>
                 <graphicClass>Graphic_Multi</graphicClass>
                 <drawSize>(2, 2)</drawSize>
             </blueprintGraphicData>
             <doorTopGraphic>
-                <texPath>StevesDoors/Things/Building/Door/SD_Blank</texPath>
+                <texPath>StevesDoors/Things/Building/DoorBase/SD_Blank</texPath>
                 <graphicClass>Graphic_Multi</graphicClass>
                 <drawSize>(1, 1)</drawSize>
             </doorTopGraphic>
             <doorSupportGraphic>
-                <texPath>StevesDoors/Things/Building/Door/SD_Blank</texPath>
+                <texPath>StevesDoors/Things/Building/DoorBase/SD_Blank</texPath>
                 <graphicClass>Graphic_Multi</graphicClass>
                 <drawSize>(1, 1)</drawSize>
             </doorSupportGraphic>
         </building>
+        <modExtensions Inherit="False">
+            <li Class="StevesDoors.ImprovedDoorExtension">
+                <isLaserDoor>true</isLaserDoor>
+            </li>
+        </modExtensions>
         <comps Inherit="False">
             <li Class="CompProperties_Forbiddable"/>
             <li Class="CompProperties_Breakdownable"/>
@@ -51,10 +56,10 @@
                 <glowRadius>3</glowRadius>
                 <colorPickerEnabled>true</colorPickerEnabled>
             </li>
-            <li Class="StevesDoors.CompProperties_ExtraDoubleDoorGraphics">
+            <li Class="StevesDoors.CompProperties_ImprovedDoorsDouble">
                 <extraDoorGraphics>
                     <li>
-                        <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorLaserDoubleLeft</texPath>
+                        <texPath>StevesDoors/Things/Building/DoorsDouble/Laser/SD_GlassDoorLaserDoubleLeft</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>MoteGlowDistorted</shaderType>
                         <shaderParameters>
@@ -69,7 +74,7 @@
                         <isLeftSideGraphic>true</isLeftSideGraphic>
                     </li>
                     <li>
-                        <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorLaserDoubleRight</texPath>
+                        <texPath>StevesDoors/Things/Building/DoorsDouble/Laser/SD_GlassDoorLaserDoubleRight</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>MoteGlowDistorted</shaderType>
                         <shaderParameters>
@@ -95,7 +100,7 @@
         <size>(2, 1)</size>
         <designatorDropdown>SZ_GlassDoubleDoors</designatorDropdown>
         <thingClass>StevesDoors.Building_UnmirroredMultiTileDoor</thingClass>
-        <uiIconPath>StevesDoors/Things/Building/Door/SD_GlassDoorIrisEnhancedDouble_MenuIcon</uiIconPath>
+        <uiIconPath>StevesDoors/Things/Building/DoorsDouble/IrisEnhanced/SD_GlassDoorIrisEnhancedDouble_MenuIcon</uiIconPath>
         <statBases>
             <WorkToBuild>15000</WorkToBuild>
             <MaxHitPoints>750</MaxHitPoints>
@@ -111,21 +116,26 @@
         <building>
             <blueprintClass>Blueprint_Build</blueprintClass>
             <blueprintGraphicData>
-                <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorIrisEnhancedDouble_Blueprint</texPath>
+                <texPath>StevesDoors/Things/Building/DoorsDouble/IrisEnhanced/SD_GlassDoorIrisEnhancedDouble_Blueprint</texPath>
                 <graphicClass>Graphic_Multi</graphicClass>
                 <drawSize>(2, 2)</drawSize>
             </blueprintGraphicData>
             <doorTopGraphic>
-                <texPath>StevesDoors/Things/Building/Door/SD_Blank</texPath>
+                <texPath>StevesDoors/Things/Building/DoorBase/SD_Blank</texPath>
                 <graphicClass>Graphic_Multi</graphicClass>
                 <drawSize>(1, 1)</drawSize>
             </doorTopGraphic>
             <doorSupportGraphic>
-                <texPath>StevesDoors/Things/Building/Door/SD_Blank</texPath>
+                <texPath>StevesDoors/Things/Building/DoorBase/SD_Blank</texPath>
                 <graphicClass>Graphic_Multi</graphicClass>
                 <drawSize>(1, 1)</drawSize>
             </doorSupportGraphic>
         </building>
+        <modExtensions Inherit="False">
+            <li Class="StevesDoors.ImprovedDoorExtension">
+                <hasAccentColors>true</hasAccentColors>
+            </li>
+        </modExtensions>
         <comps Inherit="False">
             <li Class="CompProperties_Forbiddable"/>
             <li Class="CompProperties_Breakdownable"/>
@@ -137,96 +147,116 @@
                 <glowRadius>3</glowRadius>
                 <colorPickerEnabled>true</colorPickerEnabled>
             </li>
-            <li Class="StevesDoors.CompProperties_EnhancedDoorGraphics">
-                <isIrisDoor>true</isIrisDoor>
-                <doorIrisMaxAngle>90</doorIrisMaxAngle>
-                <defaultDoorLeftGraphic>
-                    <texPath>StevesDoors/Things/Building/Door/SD_Blank</texPath>
-					<graphicClass>Graphic_Single</graphicClass>
-                    <shaderType>Transparent</shaderType>
-                    <drawSize>(1, 1)</drawSize>
-                </defaultDoorLeftGraphic>
-                <defaultDoorRightGraphic>
-                    <texPath>StevesDoors/Things/Building/Door/SD_Blank</texPath>
-					<graphicClass>Graphic_Single</graphicClass>
-                    <shaderType>Transparent</shaderType>
-                    <drawSize>(1, 1)</drawSize>
-                </defaultDoorRightGraphic>
-                <extraStaticDoorGraphics>
-                    <li>
-                        <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorDoubleDefaultLeftFrame</texPath>
-					    <graphicClass>Graphic_Single</graphicClass>
-                        <shaderType>Transparent</shaderType>
-                        <drawSize>(2, 2)</drawSize>
-                        <drawOffset>(0, 0.02, 0)</drawOffset>
-                    </li>
-                    <li>
-                        <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorDoubleDefaultRightFrame</texPath>
-					    <graphicClass>Graphic_Single</graphicClass>
-                        <shaderType>Transparent</shaderType>
-                        <drawSize>(2, 2)</drawSize>
-                        <drawOffset>(0, 0.02, 0)</drawOffset>
-                    </li>
-                </extraStaticDoorGraphics>
-            </li>
-            <li Class="StevesDoors.CompProperties_ExtraDoubleDoorGraphics">
+            <li Class="StevesDoors.CompProperties_ImprovedDoorsDouble">
                 <extraDoorGraphics>
                     <li>
-                        <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorIrisEnhancedDoubleLeft</texPath>
+                        <texPath>StevesDoors/Things/Building/DoorBase/SD_GlassDoorDoubleDefaultLeftFrame</texPath>
+					    <graphicClass>Graphic_Single</graphicClass>
+                        <shaderType>Transparent</shaderType>
+                        <drawSize>(2, 2)</drawSize>
+                        <drawOffset>(0, 0.02, 0)</drawOffset>
+                        <xMoveAmount>0</xMoveAmount>
+                    </li>
+                    <li>
+                        <texPath>StevesDoors/Things/Building/DoorBase/SD_GlassDoorDoubleDefaultRightFrame</texPath>
+					    <graphicClass>Graphic_Single</graphicClass>
+                        <shaderType>Transparent</shaderType>
+                        <drawSize>(2, 2)</drawSize>
+                        <drawOffset>(0, 0.02, 0)</drawOffset>
+                        <xMoveAmount>0</xMoveAmount>
+                    </li>
+                    <li>
+                        <texPath>StevesDoors/Things/Building/DoorsDouble/IrisEnhanced/SD_GlassDoorIrisEnhancedDoubleLeft</texPath>
                         <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
                         <drawSize>(2, 2)</drawSize>
-                        <xMoveAmount>1</xMoveAmount>
-                        <spinFactor>4</spinFactor>
-                        <shouldFade>true</shouldFade>
-                        <fadeFactor>1.25</fadeFactor>
+                        <xMoveAmount>1.5</xMoveAmount>
+                        <spinFactor>-2.0</spinFactor>
+                        <doorIrisMaxAngle>90</doorIrisMaxAngle>
+                        <isLeftSideGraphic>true</isLeftSideGraphic>
                     </li>
                     <li>
-                        <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorIrisEnhancedDoubleRight</texPath>
+                        <texPath>StevesDoors/Things/Building/DoorsDouble/IrisEnhanced/SD_GlassDoorIrisEnhancedDoubleRight</texPath>
                         <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
                         <drawSize>(2, 2)</drawSize>
-                        <xMoveAmount>-1</xMoveAmount>
-                        <spinFactor>4</spinFactor>
+                        <xMoveAmount>1.5</xMoveAmount>
+                        <spinFactor>-2.0</spinFactor>
+                        <doorIrisMaxAngle>90</doorIrisMaxAngle>
+                    </li>
+                    <li>
+                        <texPath>StevesDoors/Things/Building/DoorsDouble/IrisEnhanced/SD_GlassDoorIrisEnhancedDoubleAccentLeft</texPath>
+					    <graphicClass>Graphic_Single</graphicClass>
+                        <shaderType>TransparentPostLight</shaderType>
+                        <drawSize>(2, 2)</drawSize>
+                        <xMoveAmount>1.5</xMoveAmount>
+                        <spinFactor>-2.0</spinFactor>
+                        <doorIrisMaxAngle>90</doorIrisMaxAngle>
+                        <isLeftSideGraphic>true</isLeftSideGraphic>
+                        <isAccentGraphic>true</isAccentGraphic>
+                    </li>
+                    <li>
+                        <texPath>StevesDoors/Things/Building/DoorsDouble/IrisEnhanced/SD_GlassDoorIrisEnhancedDoubleAccentRight</texPath>
+					    <graphicClass>Graphic_Single</graphicClass>
+                        <shaderType>TransparentPostLight</shaderType>
+                        <drawSize>(2, 2)</drawSize>
+                        <xMoveAmount>1.5</xMoveAmount>
+                        <spinFactor>-2.0</spinFactor>
+                        <doorIrisMaxAngle>90</doorIrisMaxAngle>
+                        <isAccentGraphic>true</isAccentGraphic>
+                    </li>
+                    <li>
+                        <texPath>StevesDoors/Things/Building/DoorsDouble/IrisEnhanced/SD_GlassDoorIrisEnhancedDoubleBaseLeft</texPath>
+					    <graphicClass>Graphic_Single</graphicClass>
+                        <shaderType>Transparent</shaderType>
+                        <drawSize>(2, 2)</drawSize>
+                        <xMoveAmount>1</xMoveAmount>
+                        <isLeftSideGraphic>true</isLeftSideGraphic>
+                    </li>
+                    <li>
+                        <texPath>StevesDoors/Things/Building/DoorsDouble/IrisEnhanced/SD_GlassDoorIrisEnhancedDoubleBaseRight</texPath>
+					    <graphicClass>Graphic_Single</graphicClass>
+                        <shaderType>Transparent</shaderType>
+                        <drawSize>(2, 2)</drawSize>
+                        <xMoveAmount>1</xMoveAmount>
+                    </li>
+                    <li>
+                        <texPath>StevesDoors/Things/Building/DoorsDouble/IrisEnhanced/SD_GlassDoorIrisEnhancedDoubleBaseAccentLeft</texPath>
+					    <graphicClass>Graphic_Single</graphicClass>
+                        <shaderType>TransparentPostLight</shaderType>
+                        <drawSize>(2, 2)</drawSize>
+                        <xMoveAmount>1</xMoveAmount>
+                        <isLeftSideGraphic>true</isLeftSideGraphic>
+                        <isAccentGraphic>true</isAccentGraphic>
+                    </li>
+                    <li>
+                        <texPath>StevesDoors/Things/Building/DoorsDouble/IrisEnhanced/SD_GlassDoorIrisEnhancedDoubleBaseAccentRight</texPath>
+					    <graphicClass>Graphic_Single</graphicClass>
+                        <shaderType>TransparentPostLight</shaderType>
+                        <drawSize>(2, 2)</drawSize>
+                        <xMoveAmount>1</xMoveAmount>
+                        <isAccentGraphic>true</isAccentGraphic>
+                    </li>
+                    <li>
+                        <texPath>StevesDoors/Things/Building/DoorsDouble/IrisEnhanced/SD_GlassDoorIrisInnerEnhancedDoubleLeft</texPath>
+					    <graphicClass>Graphic_Single</graphicClass>
+                        <shaderType>Transparent</shaderType>
+                        <drawSize>(2, 2)</drawSize>
+                        <xMoveAmount>1.5</xMoveAmount>
+                        <spinFactor>3</spinFactor>
+                        <doorIrisMaxAngle>90</doorIrisMaxAngle>
                         <shouldFade>true</shouldFade>
                         <fadeFactor>1.25</fadeFactor>
-                    </li>
-                    <li>
-                        <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorIrisEnhancedDoubleBaseLeft</texPath>
-					    <graphicClass>Graphic_Single</graphicClass>
-                        <shaderType>Transparent</shaderType>
-                        <drawSize>(2, 2)</drawSize>
-                        <xMoveAmount>1</xMoveAmount>
-                        <spinFactor>0</spinFactor>
                         <isLeftSideGraphic>true</isLeftSideGraphic>
                     </li>
                     <li>
-                        <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorIrisEnhancedDoubleBaseRight</texPath>
+                        <texPath>StevesDoors/Things/Building/DoorsDouble/IrisEnhanced/SD_GlassDoorIrisInnerEnhancedDoubleRight</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
                         <drawSize>(2, 2)</drawSize>
-                        <xMoveAmount>-1</xMoveAmount>
-                        <spinFactor>0</spinFactor>
-                        <isLeftSideGraphic>true</isLeftSideGraphic>
-                    </li>
-                    <li>
-                        <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorIrisInnerEnhancedDoubleLeft</texPath>
-					    <graphicClass>Graphic_Single</graphicClass>
-                        <shaderType>Transparent</shaderType>
-                        <drawSize>(2, 2)</drawSize>
-                        <xMoveAmount>1</xMoveAmount>
-                        <spinFactor>2.75</spinFactor>
-                        <shouldFade>true</shouldFade>
-                        <fadeFactor>1.25</fadeFactor>
-                        <isLeftSideGraphic>true</isLeftSideGraphic>
-                    </li>
-                    <li>
-                        <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorIrisInnerEnhancedDoubleRight</texPath>
-					    <graphicClass>Graphic_Single</graphicClass>
-                        <shaderType>Transparent</shaderType>
-                        <drawSize>(2, 2)</drawSize>
-                        <xMoveAmount>1</xMoveAmount>
-                        <spinFactor>4</spinFactor>
+                        <xMoveAmount>1.5</xMoveAmount>
+                        <spinFactor>3</spinFactor>
+                        <doorIrisMaxAngle>90</doorIrisMaxAngle>
                         <shouldFade>true</shouldFade>
                         <fadeFactor>1.25</fadeFactor>
                     </li>
@@ -243,7 +273,7 @@
         <size>(2, 1)</size>
         <designatorDropdown>SZ_GlassDoubleDoors</designatorDropdown>
         <thingClass>StevesDoors.Building_UnmirroredMultiTileDoor</thingClass>
-        <uiIconPath>StevesDoors/Things/Building/Door/SD_GlassDoorDefaultDouble_MenuIcon</uiIconPath>
+        <uiIconPath>StevesDoors/Things/Building/DoorsDouble/Default/SD_GlassDoorDefaultDouble_MenuIcon</uiIconPath>
         <statBases>
             <WorkToBuild>15000</WorkToBuild>
             <MaxHitPoints>750</MaxHitPoints>
@@ -259,21 +289,26 @@
         <building>
             <blueprintClass>Blueprint_Build</blueprintClass>
             <blueprintGraphicData>
-                <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorDefaultDouble_Blueprint</texPath>
+                <texPath>StevesDoors/Things/Building/DoorsDouble/Default/SD_GlassDoorDefaultDouble_Blueprint</texPath>
                 <graphicClass>Graphic_Multi</graphicClass>
                 <drawSize>(2, 2)</drawSize>
             </blueprintGraphicData>
             <doorTopGraphic>
-                <texPath>StevesDoors/Things/Building/Door/SD_Blank</texPath>
+                <texPath>StevesDoors/Things/Building/DoorBase/SD_Blank</texPath>
                 <graphicClass>Graphic_Multi</graphicClass>
                 <drawSize>(1, 1)</drawSize>
             </doorTopGraphic>
             <doorSupportGraphic>
-                <texPath>StevesDoors/Things/Building/Door/SD_Blank</texPath>
+                <texPath>StevesDoors/Things/Building/DoorBase/SD_Blank</texPath>
                 <graphicClass>Graphic_Multi</graphicClass>
                 <drawSize>(1, 1)</drawSize>
             </doorSupportGraphic>
         </building>
+        <modExtensions Inherit="False">
+            <li Class="StevesDoors.ImprovedDoorExtension">
+                <hasAccentColors>true</hasAccentColors>
+            </li>
+        </modExtensions>
         <comps Inherit="False">
             <li Class="CompProperties_Forbiddable"/>
             <li Class="CompProperties_Breakdownable"/>
@@ -285,41 +320,26 @@
                 <glowRadius>3</glowRadius>
                 <colorPickerEnabled>true</colorPickerEnabled>
             </li>
-            <li Class="StevesDoors.CompProperties_EnhancedDoorGraphics">
-                <isIrisDoor>false</isIrisDoor>
-                <defaultDoorLeftGraphic>
-                    <texPath>StevesDoors/Things/Building/Door/SD_Blank</texPath>
-					<graphicClass>Graphic_Single</graphicClass>
-                    <shaderType>Transparent</shaderType>
-                    <drawSize>(2, 2)</drawSize>
-                </defaultDoorLeftGraphic>
-                <defaultDoorRightGraphic>
-                    <texPath>StevesDoors/Things/Building/Door/SD_Blank</texPath>
-					<graphicClass>Graphic_Single</graphicClass>
-                    <shaderType>Transparent</shaderType>
-                    <drawSize>(2, 2)</drawSize>
-                </defaultDoorRightGraphic>
-                <extraStaticDoorGraphics>
-                    <li>
-                        <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorDoubleDefaultLeftFrame</texPath>
-					    <graphicClass>Graphic_Single</graphicClass>
-                        <shaderType>Transparent</shaderType>
-                        <drawSize>(2, 2)</drawSize>
-                        <drawOffset>(0, 0.02, 0)</drawOffset>
-                    </li>
-                    <li>
-                        <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorDoubleDefaultRightFrame</texPath>
-					    <graphicClass>Graphic_Single</graphicClass>
-                        <shaderType>Transparent</shaderType>
-                        <drawSize>(2, 2)</drawSize>
-                        <drawOffset>(0, 0.02, 0)</drawOffset>
-                    </li>
-                </extraStaticDoorGraphics>
-            </li>
-            <li Class="StevesDoors.CompProperties_ExtraDoubleDoorGraphics">
+            <li Class="StevesDoors.CompProperties_ImprovedDoorsDouble">
                 <extraDoorGraphics>
                     <li>
-                        <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorDefaultDoubleLeft</texPath>
+                        <texPath>StevesDoors/Things/Building/DoorBase/SD_GlassDoorDoubleDefaultLeftFrame</texPath>
+					    <graphicClass>Graphic_Single</graphicClass>
+                        <shaderType>Transparent</shaderType>
+                        <drawSize>(2, 2)</drawSize>
+                        <drawOffset>(0, 0.02, 0)</drawOffset>
+                        <xMoveAmount>0</xMoveAmount>
+                    </li>
+                    <li>
+                        <texPath>StevesDoors/Things/Building/DoorBase/SD_GlassDoorDoubleDefaultRightFrame</texPath>
+					    <graphicClass>Graphic_Single</graphicClass>
+                        <shaderType>Transparent</shaderType>
+                        <drawSize>(2, 2)</drawSize>
+                        <drawOffset>(0, 0.02, 0)</drawOffset>
+                        <xMoveAmount>0</xMoveAmount>
+                    </li>
+                    <li>
+                        <texPath>StevesDoors/Things/Building/DoorsDouble/Default/SD_GlassDoorDefaultDoubleLeft</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
                         <drawSize>(2, 2)</drawSize>
@@ -327,11 +347,28 @@
                         <isLeftSideGraphic>true</isLeftSideGraphic>
                     </li>
                     <li>
-                        <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorDefaultDoubleRight</texPath>
+                        <texPath>StevesDoors/Things/Building/DoorsDouble/Default/SD_GlassDoorDefaultDoubleRight</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
                         <drawSize>(2, 2)</drawSize>
                         <xMoveAmount>1</xMoveAmount>
+                    </li>
+                    <li>
+                        <texPath>StevesDoors/Things/Building/DoorsDouble/Default/SD_GlassDoorDefaultDoubleAccentLeft</texPath>
+					    <graphicClass>Graphic_Single</graphicClass>
+                        <shaderType>TransparentPostLight</shaderType>
+                        <drawSize>(2, 2)</drawSize>
+                        <xMoveAmount>1</xMoveAmount>
+                        <isLeftSideGraphic>true</isLeftSideGraphic>
+                        <isAccentGraphic>true</isAccentGraphic>
+                    </li>
+                    <li>
+                        <texPath>StevesDoors/Things/Building/DoorsDouble/Default/SD_GlassDoorDefaultDoubleAccentRight</texPath>
+					    <graphicClass>Graphic_Single</graphicClass>
+                        <shaderType>TransparentPostLight</shaderType>
+                        <drawSize>(2, 2)</drawSize>
+                        <xMoveAmount>1</xMoveAmount>
+                        <isAccentGraphic>true</isAccentGraphic>
                     </li>
                 </extraDoorGraphics>
             </li>
@@ -346,7 +383,7 @@
         <size>(2, 1)</size>
         <designatorDropdown>SZ_GlassDoubleDoors</designatorDropdown>
         <thingClass>StevesDoors.Building_UnmirroredMultiTileDoor</thingClass>
-        <uiIconPath>StevesDoors/Things/Building/Door/SD_GlassDoorCascadingDouble_MenuIcon</uiIconPath>
+        <uiIconPath>StevesDoors/Things/Building/DoorsDouble/Cascading/SD_GlassDoorCascadingDouble_MenuIcon</uiIconPath>
         <statBases>
             <WorkToBuild>15000</WorkToBuild>
             <MaxHitPoints>750</MaxHitPoints>
@@ -362,21 +399,26 @@
         <building>
             <blueprintClass>Blueprint_Build</blueprintClass>
             <blueprintGraphicData>
-                <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorCascadingDouble_Blueprint</texPath>
+                <texPath>StevesDoors/Things/Building/DoorsDouble/Cascading/SD_GlassDoorCascadingDouble_Blueprint</texPath>
                 <graphicClass>Graphic_Multi</graphicClass>
                 <drawSize>(2, 2)</drawSize>
             </blueprintGraphicData>
             <doorTopGraphic>
-                <texPath>StevesDoors/Things/Building/Door/SD_Blank</texPath>
+                <texPath>StevesDoors/Things/Building/DoorBase/SD_Blank</texPath>
                 <graphicClass>Graphic_Multi</graphicClass>
                 <drawSize>(1, 1)</drawSize>
             </doorTopGraphic>
             <doorSupportGraphic>
-                <texPath>StevesDoors/Things/Building/Door/SD_Blank</texPath>
+                <texPath>StevesDoors/Things/Building/DoorBase/SD_Blank</texPath>
                 <graphicClass>Graphic_Multi</graphicClass>
                 <drawSize>(1, 1)</drawSize>
             </doorSupportGraphic>
         </building>
+        <modExtensions Inherit="False">
+            <li Class="StevesDoors.ImprovedDoorExtension">
+                <hasAccentColors>true</hasAccentColors>
+            </li>
+        </modExtensions>
         <comps Inherit="False">
             <li Class="CompProperties_Forbiddable"/>
             <li Class="CompProperties_Breakdownable"/>
@@ -388,41 +430,26 @@
                 <glowRadius>3</glowRadius>
                 <colorPickerEnabled>true</colorPickerEnabled>
             </li>
-            <li Class="StevesDoors.CompProperties_EnhancedDoorGraphics">
-                <isIrisDoor>false</isIrisDoor>
-                <defaultDoorLeftGraphic>
-                    <texPath>StevesDoors/Things/Building/Door/SD_Blank</texPath>
-					<graphicClass>Graphic_Single</graphicClass>
-                    <shaderType>Transparent</shaderType>
-                    <drawSize>(2, 2)</drawSize>
-                </defaultDoorLeftGraphic>
-                <defaultDoorRightGraphic>
-                    <texPath>StevesDoors/Things/Building/Door/SD_Blank</texPath>
-					<graphicClass>Graphic_Single</graphicClass>
-                    <shaderType>Transparent</shaderType>
-                    <drawSize>(2, 2)</drawSize>
-                </defaultDoorRightGraphic>
-                <extraStaticDoorGraphics>
-                    <li>
-                        <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorDoubleDefaultLeftFrame</texPath>
-					    <graphicClass>Graphic_Single</graphicClass>
-                        <shaderType>Transparent</shaderType>
-                        <drawSize>(2, 2)</drawSize>
-                        <drawOffset>(0, 0.02, 0)</drawOffset>
-                    </li>
-                    <li>
-                        <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorDoubleDefaultRightFrame</texPath>
-					    <graphicClass>Graphic_Single</graphicClass>
-                        <shaderType>Transparent</shaderType>
-                        <drawSize>(2, 2)</drawSize>
-                        <drawOffset>(0, 0.02, 0)</drawOffset>
-                    </li>
-                </extraStaticDoorGraphics>
-            </li>
-            <li Class="StevesDoors.CompProperties_ExtraDoubleDoorGraphics">
+            <li Class="StevesDoors.CompProperties_ImprovedDoorsDouble">
                 <extraDoorGraphics>
                     <li>
-                        <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorCascadingDoubleLeftExtra</texPath>
+                        <texPath>StevesDoors/Things/Building/DoorBase/SD_GlassDoorDoubleDefaultLeftFrame</texPath>
+					    <graphicClass>Graphic_Single</graphicClass>
+                        <shaderType>Transparent</shaderType>
+                        <drawSize>(2, 2)</drawSize>
+                        <drawOffset>(0, 0.02, 0)</drawOffset>
+                        <xMoveAmount>0</xMoveAmount>
+                    </li>
+                    <li>
+                        <texPath>StevesDoors/Things/Building/DoorBase/SD_GlassDoorDoubleDefaultRightFrame</texPath>
+					    <graphicClass>Graphic_Single</graphicClass>
+                        <shaderType>Transparent</shaderType>
+                        <drawSize>(2, 2)</drawSize>
+                        <drawOffset>(0, 0.02, 0)</drawOffset>
+                        <xMoveAmount>0</xMoveAmount>
+                    </li>
+                    <li>
+                        <texPath>StevesDoors/Things/Building/DoorsDouble/Cascading/SD_GlassDoorCascadingDoubleLeftExtra</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
                         <drawSize>(2, 2)</drawSize>
@@ -430,14 +457,31 @@
                         <isLeftSideGraphic>true</isLeftSideGraphic>
                     </li>
                     <li>
-                        <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorCascadingDoubleRightExtra</texPath>
+                        <texPath>StevesDoors/Things/Building/DoorsDouble/Cascading/SD_GlassDoorCascadingDoubleRightExtra</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
                         <drawSize>(2, 2)</drawSize>
                         <xMoveAmount>0.95</xMoveAmount>
                     </li>
                     <li>
-                        <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorCascadingDoubleLeft</texPath>
+                        <texPath>StevesDoors/Things/Building/DoorsDouble/Cascading/SD_GlassDoorCascadingDoubleAccentLeftExtra</texPath>
+					    <graphicClass>Graphic_Single</graphicClass>
+                        <shaderType>TransparentPostLight</shaderType>
+                        <drawSize>(2, 2)</drawSize>
+                        <xMoveAmount>0.95</xMoveAmount>
+                        <isLeftSideGraphic>true</isLeftSideGraphic>
+                        <isAccentGraphic>true</isAccentGraphic>
+                    </li>
+                    <li>
+                        <texPath>StevesDoors/Things/Building/DoorsDouble/Cascading/SD_GlassDoorCascadingDoubleAccentRightExtra</texPath>
+					    <graphicClass>Graphic_Single</graphicClass>
+                        <shaderType>TransparentPostLight</shaderType>
+                        <drawSize>(2, 2)</drawSize>
+                        <xMoveAmount>0.95</xMoveAmount>
+                        <isAccentGraphic>true</isAccentGraphic>
+                    </li>
+                    <li>
+                        <texPath>StevesDoors/Things/Building/DoorsDouble/Cascading/SD_GlassDoorCascadingDoubleLeft</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
                         <drawSize>(2, 2)</drawSize>
@@ -445,11 +489,28 @@
                         <isLeftSideGraphic>true</isLeftSideGraphic>
                     </li>
                     <li>
-                        <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorCascadingDoubleRight</texPath>
+                        <texPath>StevesDoors/Things/Building/DoorsDouble/Cascading/SD_GlassDoorCascadingDoubleRight</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
                         <drawSize>(2, 2)</drawSize>
                         <xMoveAmount>0.4</xMoveAmount>
+                    </li>
+                    <li>
+                        <texPath>StevesDoors/Things/Building/DoorsDouble/Cascading/SD_GlassDoorCascadingDoubleAccentLeft</texPath>
+					    <graphicClass>Graphic_Single</graphicClass>
+                        <shaderType>TransparentPostLight</shaderType>
+                        <drawSize>(2, 2)</drawSize>
+                        <xMoveAmount>0.4</xMoveAmount>
+                        <isLeftSideGraphic>true</isLeftSideGraphic>
+                        <isAccentGraphic>true</isAccentGraphic>
+                    </li>
+                    <li>
+                        <texPath>StevesDoors/Things/Building/DoorsDouble/Cascading/SD_GlassDoorCascadingDoubleAccentRight</texPath>
+					    <graphicClass>Graphic_Single</graphicClass>
+                        <shaderType>TransparentPostLight</shaderType>
+                        <drawSize>(2, 2)</drawSize>
+                        <xMoveAmount>0.4</xMoveAmount>
+                        <isAccentGraphic>true</isAccentGraphic>
                     </li>
                 </extraDoorGraphics>
             </li>
@@ -464,7 +525,7 @@
         <size>(2, 1)</size>
         <designatorDropdown>SZ_GlassDoubleDoors</designatorDropdown>
         <thingClass>StevesDoors.Building_UnmirroredMultiTileDoor</thingClass>
-        <uiIconPath>StevesDoors/Things/Building/Door/SD_GlassDoorDefaultDouble_MenuIcon</uiIconPath>
+        <uiIconPath>StevesDoors/Things/Building/DoorsDouble/Default/SD_GlassDoorDefaultDouble_MenuIcon</uiIconPath>
         <statBases>
             <WorkToBuild>15000</WorkToBuild>
             <MaxHitPoints>750</MaxHitPoints>
@@ -480,21 +541,26 @@
         <building>
             <blueprintClass>Blueprint_Build</blueprintClass>
             <blueprintGraphicData>
-                <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorDefaultDouble_Blueprint</texPath>
+                <texPath>StevesDoors/Things/Building/DoorsDouble/Default/SD_GlassDoorDefaultDouble_Blueprint</texPath>
                 <graphicClass>Graphic_Multi</graphicClass>
                 <drawSize>(2, 2)</drawSize>
             </blueprintGraphicData>
             <doorTopGraphic>
-                <texPath>StevesDoors/Things/Building/Door/SD_Blank</texPath>
+                <texPath>StevesDoors/Things/Building/DoorBase/SD_Blank</texPath>
                 <graphicClass>Graphic_Multi</graphicClass>
                 <drawSize>(1, 1)</drawSize>
             </doorTopGraphic>
             <doorSupportGraphic>
-                <texPath>StevesDoors/Things/Building/Door/SD_Blank</texPath>
+                <texPath>StevesDoors/Things/Building/DoorBase/SD_Blank</texPath>
                 <graphicClass>Graphic_Multi</graphicClass>
                 <drawSize>(1, 1)</drawSize>
             </doorSupportGraphic>
         </building>
+        <modExtensions Inherit="False">
+            <li Class="StevesDoors.ImprovedDoorExtension">
+                <hasAccentColors>true</hasAccentColors>
+            </li>
+        </modExtensions>
         <comps Inherit="False">
             <li Class="CompProperties_Forbiddable"/>
             <li Class="CompProperties_Breakdownable"/>
@@ -506,41 +572,26 @@
                 <glowRadius>3</glowRadius>
                 <colorPickerEnabled>true</colorPickerEnabled>
             </li>
-            <li Class="StevesDoors.CompProperties_EnhancedDoorGraphics">
-                <isIrisDoor>false</isIrisDoor>
-                <defaultDoorLeftGraphic>
-                    <texPath>StevesDoors/Things/Building/Door/SD_Blank</texPath>
-					<graphicClass>Graphic_Single</graphicClass>
-                    <shaderType>Transparent</shaderType>
-                    <drawSize>(2, 2)</drawSize>
-                </defaultDoorLeftGraphic>
-                <defaultDoorRightGraphic>
-                    <texPath>StevesDoors/Things/Building/Door/SD_Blank</texPath>
-					<graphicClass>Graphic_Single</graphicClass>
-                    <shaderType>Transparent</shaderType>
-                    <drawSize>(2, 2)</drawSize>
-                </defaultDoorRightGraphic>
-                <extraStaticDoorGraphics>
-                    <li>
-                        <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorDoubleDefaultLeftFrame</texPath>
-					    <graphicClass>Graphic_Single</graphicClass>
-                        <shaderType>Transparent</shaderType>
-                        <drawSize>(2, 2)</drawSize>
-                        <drawOffset>(0, 0.02, 0)</drawOffset>
-                    </li>
-                    <li>
-                        <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorDoubleDefaultRightFrame</texPath>
-					    <graphicClass>Graphic_Single</graphicClass>
-                        <shaderType>Transparent</shaderType>
-                        <drawSize>(2, 2)</drawSize>
-                        <drawOffset>(0, 0.02, 0)</drawOffset>
-                    </li>
-                </extraStaticDoorGraphics>
-            </li>
-            <li Class="StevesDoors.CompProperties_ExtraDoubleDoorGraphics">
+            <li Class="StevesDoors.CompProperties_ImprovedDoorsDouble">
                 <extraDoorGraphics>
                     <li>
-                        <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorIrisEnhancedDoubleBaseLeft</texPath>
+                        <texPath>StevesDoors/Things/Building/DoorBase/SD_GlassDoorDoubleDefaultLeftFrame</texPath>
+					    <graphicClass>Graphic_Single</graphicClass>
+                        <shaderType>Transparent</shaderType>
+                        <drawSize>(2, 2)</drawSize>
+                        <drawOffset>(0, 0.02, 0)</drawOffset>
+                        <xMoveAmount>0</xMoveAmount>
+                    </li>
+                    <li>
+                        <texPath>StevesDoors/Things/Building/DoorBase/SD_GlassDoorDoubleDefaultRightFrame</texPath>
+					    <graphicClass>Graphic_Single</graphicClass>
+                        <shaderType>Transparent</shaderType>
+                        <drawSize>(2, 2)</drawSize>
+                        <drawOffset>(0, 0.02, 0)</drawOffset>
+                        <xMoveAmount>0</xMoveAmount>
+                    </li>
+                    <li>
+                        <texPath>StevesDoors/Things/Building/DoorsDouble/IrisEnhanced/SD_GlassDoorIrisEnhancedDoubleBaseLeft</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
                         <drawSize>(2, 2)</drawSize>
@@ -548,14 +599,14 @@
                         <isLeftSideGraphic>true</isLeftSideGraphic>
                     </li>
                     <li>
-                        <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorIrisEnhancedDoubleBaseRight</texPath>
+                        <texPath>StevesDoors/Things/Building/DoorsDouble/IrisEnhanced/SD_GlassDoorIrisEnhancedDoubleBaseRight</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
                         <drawSize>(2, 2)</drawSize>
                         <xMoveAmount>1</xMoveAmount>
                     </li>
                     <li>
-                        <texPath>StevesDoors/Things/Building/Door/SD_TESTINGCenterGradientTex</texPath>
+                        <texPath>StevesDoors/Things/Building/DoorBase/SD_TESTINGCenterGradientTex</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>MoteGlowDistorted</shaderType>
                         <shaderParameters>
@@ -567,8 +618,7 @@
                         <xMoveAmount>0</xMoveAmount>
                         <shouldFade>true</shouldFade>
                         <fadeFactor>1</fadeFactor>
-                        <color>(0, 0.9, 0.35)</color>
-                        <isLeftSideGraphic>true</isLeftSideGraphic>
+                        <isAccentGraphic>true</isAccentGraphic>
                     </li>
                 </extraDoorGraphics>
             </li>

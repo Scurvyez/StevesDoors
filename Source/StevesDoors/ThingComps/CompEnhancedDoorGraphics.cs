@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace StevesDoors
 {
+    /*
     [StaticConstructorOnStartup]
     public class CompEnhancedDoorGraphics : ThingComp
     {
@@ -56,30 +57,11 @@ namespace StevesDoors
     {
         public bool isIrisDoor = false;
         public float doorIrisMaxAngle = 0f;
-        public GraphicDataEnhancedDoors defaultDoorLeftGraphic;
-        public GraphicDataEnhancedDoors defaultDoorRightGraphic;
+        public GraphicDataEnhancedDoors defaultDoorLeftGraphic = null;
+        public GraphicDataEnhancedDoors defaultDoorRightGraphic = null;
         public List<GraphicDataEnhancedDoors> extraStaticDoorGraphics = null;
 
         public CompProperties_EnhancedDoorGraphics() => compClass = typeof(CompEnhancedDoorGraphics);
-
-        public override IEnumerable<string> ConfigErrors(ThingDef parentDef)
-        {
-            foreach (string error in base.ConfigErrors(parentDef))
-            {
-                yield return error;
-            }
-            if (defaultDoorLeftGraphic == null && defaultDoorRightGraphic == null)
-            {
-                yield return $"<color={SDLog.ErrorMsgCol}>[Steve's Doors]</color> [CompProperties_EnhancedDoorGraphics] No textures found for <defaultDoorLeftGraphic> and <defaultDoorRightGraphic>, please provide both.";
-            }
-            else if (defaultDoorLeftGraphic == null)
-            {
-                yield return $"<color={SDLog.ErrorMsgCol}>[Steve's Doors]</color> [CompProperties_EnhancedDoorGraphics] No texture found for <defaultDoorLeftGraphic>, please provide one.";
-            }
-            else if (defaultDoorRightGraphic == null)
-            {
-                yield return $"<color={SDLog.ErrorMsgCol}>[Steve's Doors]</color> [CompProperties_EnhancedDoorGraphics] No texture found for <defaultDoorRightGraphic>, please provide one.";
-            }
-        }
     }
+    */
 }

@@ -8,10 +8,10 @@
         <label>default glass door (1x1)</label>
         <thingClass>StevesDoors.Building_UnmirroredDoor</thingClass>
         <description>Divides rooms. Powered and opens quickly. Color-changeable glow via the color picker. Allows light through as well.</description>
-        <uiIconPath>StevesDoors/Things/Building/Door/SD_GlassDoorDefault_MenuIcon</uiIconPath>
+        <uiIconPath>StevesDoors/Things/Building/DoorsSingle/Default/SD_GlassDoorDefault_MenuIcon</uiIconPath>
         <building>
             <blueprintGraphicData>
-                <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorDefault_Blueprint</texPath>
+                <texPath>StevesDoors/Things/Building/DoorsSingle/Default/SD_GlassDoorDefault_Blueprint</texPath>
             </blueprintGraphicData>
         </building>
         <researchPrerequisites>
@@ -22,7 +22,7 @@
             <ComponentIndustrial>1</ComponentIndustrial>
         </costList>
         <graphicData>
-            <texPath>StevesDoors/Things/Building/Door/SD_Blank</texPath>
+            <texPath>StevesDoors/Things/Building/DoorBase/SD_Blank</texPath>
             <graphicClass>Graphic_Single</graphicClass>
             <damageData>
                 <enabled>false</enabled>
@@ -43,26 +43,26 @@
                 <isIrisDoor>false</isIrisDoor>
                 <doorIrisMaxAngle>0</doorIrisMaxAngle>
                 <defaultDoorLeftGraphic>
-                    <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorDefaultLeft</texPath>
+                    <texPath>StevesDoors/Things/Building/DoorsSingle/Default/SD_GlassDoorDefaultLeft</texPath>
 					<graphicClass>Graphic_Single</graphicClass>
                     <shaderType>Transparent</shaderType>
                     <drawSize>(1.0, 1.0)</drawSize>
                 </defaultDoorLeftGraphic>
                 <defaultDoorRightGraphic>
-                    <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorDefaultRight</texPath>
+                    <texPath>StevesDoors/Things/Building/DoorsSingle/Default/SD_GlassDoorDefaultRight</texPath>
 					<graphicClass>Graphic_Single</graphicClass>
                     <shaderType>Transparent</shaderType>
                     <drawSize>(1.0, 1.0)</drawSize>
                 </defaultDoorRightGraphic>
                 <extraStaticDoorGraphics>
                     <li>
-                        <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorDefaultLeftFrame</texPath>
+                        <texPath>StevesDoors/Things/Building/DoorBase/SD_GlassDoorDefaultLeftFrame</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
                         <drawSize>(1.0, 1.0)</drawSize>
                     </li>
                     <li>
-                        <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorDefaultRightFrame</texPath>
+                        <texPath>StevesDoors/Things/Building/DoorBase/SD_GlassDoorDefaultRightFrame</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
                         <drawSize>(1.0, 1.0)</drawSize>
@@ -77,10 +77,10 @@
     <ThingDef ParentName="SD_GlassDoorDefault">
         <defName>SD_GlassDoorSlidingSingle</defName>
         <label>sliding glass door (1x1)</label>
-        <uiIconPath>StevesDoors/Things/Building/Door/SD_GlassDoorSlidingSingle_MenuIcon</uiIconPath>
+        <uiIconPath>StevesDoors/Things/Building/DoorsSingle/Sliding/SD_GlassDoorSlidingSingle_MenuIcon</uiIconPath>
         <building>
             <blueprintGraphicData>
-                <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorSlidingSingle_Blueprint</texPath>
+                <texPath>StevesDoors/Things/Building/DoorsSingle/Sliding/SD_GlassDoorSlidingSingle_Blueprint</texPath>
             </blueprintGraphicData>
         </building>
         <comps Inherit="False">
@@ -98,26 +98,26 @@
                 <isIrisDoor>false</isIrisDoor>
                 <doorIrisMaxAngle>0</doorIrisMaxAngle>
                 <defaultDoorLeftGraphic>
-                    <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorSlidingSingleLeft</texPath>
+                    <texPath>StevesDoors/Things/Building/DoorsSingle/Sliding/SD_GlassDoorSlidingSingleLeft</texPath>
 					<graphicClass>Graphic_Single</graphicClass>
                     <shaderType>Transparent</shaderType>
                     <drawSize>(1.0, 1.0)</drawSize>
                 </defaultDoorLeftGraphic>
                 <defaultDoorRightGraphic>
-                    <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorSlidingSingleRight</texPath>
+                    <texPath>StevesDoors/Things/Building/DoorBase/SD_Blank</texPath>
 					<graphicClass>Graphic_Single</graphicClass>
                     <shaderType>Transparent</shaderType>
                     <drawSize>(1.0, 1.0)</drawSize>
                 </defaultDoorRightGraphic>
                 <extraStaticDoorGraphics>
                     <li>
-                        <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorDefaultLeftFrame</texPath>
+                        <texPath>StevesDoors/Things/Building/DoorBase/SD_GlassDoorDefaultLeftFrame</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
                         <drawSize>(1.0, 1.0)</drawSize>
                     </li>
                     <li>
-                        <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorDefaultRightFrame</texPath>
+                        <texPath>StevesDoors/Things/Building/DoorBase/SD_GlassDoorDefaultRightFrame</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
                         <drawSize>(1.0, 1.0)</drawSize>
@@ -132,10 +132,10 @@
     <ThingDef ParentName="SD_GlassDoorDefault">
         <defName>SD_GlassDoorRollingVaultSingle</defName>
         <label>rolling vault glass door (1x1)</label>
-        <uiIconPath>StevesDoors/Things/Building/Door/SD_GlassDoorRollingVaultSingle_MenuIcon</uiIconPath>
+        <uiIconPath>StevesDoors/Things/Building/DoorsSingle/RollingVault/SD_GlassDoorRollingVaultSingle_MenuIcon</uiIconPath>
         <building>
             <blueprintGraphicData>
-                <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorRollingVaultSingle_Blueprint</texPath>
+                <texPath>StevesDoors/Things/Building/DoorsSingle/RollingVault/SD_GlassDoorRollingVaultSingle_Blueprint</texPath>
             </blueprintGraphicData>
         </building>
         <comps Inherit="False">
@@ -153,26 +153,26 @@
                 <isIrisDoor>true</isIrisDoor>
                 <doorIrisMaxAngle>90</doorIrisMaxAngle>
                 <defaultDoorLeftGraphic>
-                    <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorRollingVaultSingleLeft</texPath>
+                    <texPath>StevesDoors/Things/Building/DoorsSingle/RollingVault/SD_GlassDoorRollingVaultSingleLeft</texPath>
 					<graphicClass>Graphic_Single</graphicClass>
                     <shaderType>Transparent</shaderType>
                     <drawSize>(1.0, 1.0)</drawSize>
                 </defaultDoorLeftGraphic>
                 <defaultDoorRightGraphic>
-                    <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorRollingVaultSingleRight</texPath>
+                    <texPath>StevesDoors/Things/Building/DoorBase/SD_Blank</texPath>
 					<graphicClass>Graphic_Single</graphicClass>
                     <shaderType>Transparent</shaderType>
                     <drawSize>(1.0, 1.0)</drawSize>
                 </defaultDoorRightGraphic>
                 <extraStaticDoorGraphics>
                     <li>
-                        <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorDefaultLeftFrame</texPath>
+                        <texPath>StevesDoors/Things/Building/DoorBase/SD_GlassDoorDefaultLeftFrame</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
                         <drawSize>(1.0, 1.0)</drawSize>
                     </li>
                     <li>
-                        <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorDefaultRightFrame</texPath>
+                        <texPath>StevesDoors/Things/Building/DoorBase/SD_GlassDoorDefaultRightFrame</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
                         <drawSize>(1.0, 1.0)</drawSize>
@@ -188,10 +188,10 @@
         <defName>SD_GlassDoorAngledFading</defName>
         <label>angled-fading glass door (1x1)</label>
         <description>Divides rooms. Powered and opens quickly. Color-changeable glow via the color picker. Allows light through as well.</description>
-        <uiIconPath>StevesDoors/Things/Building/Door/SD_GlassDoorAngledFading_MenuIcon</uiIconPath>
+        <uiIconPath>StevesDoors/Things/Building/DoorsSingle/AngledFading/SD_GlassDoorAngledFading_MenuIcon</uiIconPath>
         <building>
             <blueprintGraphicData>
-                <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorAngledFading_Blueprint</texPath>
+                <texPath>StevesDoors/Things/Building/DoorsSingle/AngledFading/SD_GlassDoorAngledFading_Blueprint</texPath>
             </blueprintGraphicData>
         </building>
         <comps Inherit="False">
@@ -209,26 +209,26 @@
                 <isIrisDoor>false</isIrisDoor>
                 <doorIrisMaxAngle>0</doorIrisMaxAngle>
                 <defaultDoorLeftGraphic>
-                    <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorAngledFadingLeft</texPath>
+                    <texPath>StevesDoors/Things/Building/DoorsSingle/AngledFading/SD_GlassDoorAngledFadingLeft</texPath>
 					<graphicClass>Graphic_Single</graphicClass>
                     <shaderType>Transparent</shaderType>
                     <drawSize>(1.0, 1.0)</drawSize>
                 </defaultDoorLeftGraphic>
                 <defaultDoorRightGraphic>
-                    <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorAngledFadingRight</texPath>
+                    <texPath>StevesDoors/Things/Building/DoorsSingle/AngledFading/SD_GlassDoorAngledFadingRight</texPath>
 					<graphicClass>Graphic_Single</graphicClass>
                     <shaderType>Transparent</shaderType>
                     <drawSize>(1.0, 1.0)</drawSize>
                 </defaultDoorRightGraphic>
                 <extraStaticDoorGraphics>
                     <li>
-                        <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorDefaultLeftFrame</texPath>
+                        <texPath>StevesDoors/Things/Building/DoorBase/SD_GlassDoorDefaultLeftFrame</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
                         <drawSize>(1.0, 1.0)</drawSize>
                     </li>
                     <li>
-                        <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorDefaultRightFrame</texPath>
+                        <texPath>StevesDoors/Things/Building/DoorBase/SD_GlassDoorDefaultRightFrame</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
                         <drawSize>(1.0, 1.0)</drawSize>
@@ -238,7 +238,7 @@
             <li Class="StevesDoors.CompProperties_ExtraDoorGraphics">
                 <extraDoorGraphics>
                     <li>
-                        <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorAngledFadingAuxLeft</texPath>
+                        <texPath>StevesDoors/Things/Building/DoorsSingle/AngledFading/SD_GlassDoorAngledFadingAuxLeft</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
                         <drawSize>(1.0, 1.0)</drawSize>
@@ -247,7 +247,7 @@
                         <isLeftSideGraphic>true</isLeftSideGraphic>
                     </li>
                     <li>
-                        <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorAngledFadingAuxRight</texPath>
+                        <texPath>StevesDoors/Things/Building/DoorsSingle/AngledFading/SD_GlassDoorAngledFadingAuxRight</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
                         <drawSize>(1.0, 1.0)</drawSize>
@@ -264,10 +264,10 @@
     <ThingDef ParentName="SD_GlassDoorDefault">
         <defName>SD_GlassDoorArrow</defName>
         <label>arrow glass door (1x1)</label>
-        <uiIconPath>StevesDoors/Things/Building/Door/SD_GlassDoorArrow_MenuIcon</uiIconPath>
+        <uiIconPath>StevesDoors/Things/Building/DoorsSingle/Arrow/SD_GlassDoorArrow_MenuIcon</uiIconPath>
         <building>
             <blueprintGraphicData>
-                <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorArrow_Blueprint</texPath>
+                <texPath>StevesDoors/Things/Building/DoorsSingle/Arrow/SD_GlassDoorArrow_Blueprint</texPath>
             </blueprintGraphicData>
         </building>
         <comps Inherit="False">
@@ -285,26 +285,26 @@
                 <isIrisDoor>false</isIrisDoor>
                 <doorIrisMaxAngle>0</doorIrisMaxAngle>
                 <defaultDoorLeftGraphic>
-                    <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorArrowLeft</texPath>
+                    <texPath>StevesDoors/Things/Building/DoorsSingle/Arrow/SD_GlassDoorArrowLeft</texPath>
 					<graphicClass>Graphic_Single</graphicClass>
                     <shaderType>Transparent</shaderType>
                     <drawSize>(1.0, 1.0)</drawSize>
                 </defaultDoorLeftGraphic>
                 <defaultDoorRightGraphic>
-                    <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorArrowRight</texPath>
+                    <texPath>StevesDoors/Things/Building/DoorsSingle/Arrow/SD_GlassDoorArrowRight</texPath>
 					<graphicClass>Graphic_Single</graphicClass>
                     <shaderType>Transparent</shaderType>
                     <drawSize>(1.0, 1.0)</drawSize>
                 </defaultDoorRightGraphic>
                 <extraStaticDoorGraphics>
                     <li>
-                        <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorDefaultLeftFrame</texPath>
+                        <texPath>StevesDoors/Things/Building/DoorBase/SD_GlassDoorDefaultLeftFrame</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
                         <drawSize>(1.0, 1.0)</drawSize>
                     </li>
                     <li>
-                        <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorDefaultRightFrame</texPath>
+                        <texPath>StevesDoors/Things/Building/DoorBase/SD_GlassDoorDefaultRightFrame</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
                         <drawSize>(1.0, 1.0)</drawSize>
@@ -319,10 +319,10 @@
     <ThingDef ParentName="SD_GlassDoorDefault">
         <defName>SD_GlassDoorSlanted</defName>
         <label>slanted glass door (1x1)</label>
-        <uiIconPath>StevesDoors/Things/Building/Door/SD_GlassDoorSlanted_MenuIcon</uiIconPath>
+        <uiIconPath>StevesDoors/Things/Building/DoorsSingle/Slanted/SD_GlassDoorSlanted_MenuIcon</uiIconPath>
         <building>
             <blueprintGraphicData>
-                <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorSlanted_Blueprint</texPath>
+                <texPath>StevesDoors/Things/Building/DoorsSingle/Slanted/SD_GlassDoorSlanted_Blueprint</texPath>
             </blueprintGraphicData>
         </building>
         <comps Inherit="False">
@@ -340,26 +340,26 @@
                 <isIrisDoor>false</isIrisDoor>
                 <doorIrisMaxAngle>0</doorIrisMaxAngle>
                 <defaultDoorLeftGraphic>
-                    <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorSlantedLeft</texPath>
+                    <texPath>StevesDoors/Things/Building/DoorsSingle/Slanted/SD_GlassDoorSlantedLeft</texPath>
 					<graphicClass>Graphic_Single</graphicClass>
                     <shaderType>Transparent</shaderType>
                     <drawSize>(1.0, 1.0)</drawSize>
                 </defaultDoorLeftGraphic>
                 <defaultDoorRightGraphic>
-                    <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorSlantedRight</texPath>
+                    <texPath>StevesDoors/Things/Building/DoorsSingle/Slanted/SD_GlassDoorSlantedRight</texPath>
 					<graphicClass>Graphic_Single</graphicClass>
                     <shaderType>Transparent</shaderType>
                     <drawSize>(1.0, 1.0)</drawSize>
                 </defaultDoorRightGraphic>
                 <extraStaticDoorGraphics>
                     <li>
-                        <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorDefaultLeftFrame</texPath>
+                        <texPath>StevesDoors/Things/Building/DoorBase/SD_GlassDoorDefaultLeftFrame</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
                         <drawSize>(1.0, 1.0)</drawSize>
                     </li>
                     <li>
-                        <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorDefaultRightFrame</texPath>
+                        <texPath>StevesDoors/Things/Building/DoorBase/SD_GlassDoorDefaultRightFrame</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
                         <drawSize>(1.0, 1.0)</drawSize>
@@ -374,10 +374,10 @@
     <ThingDef ParentName="SD_GlassDoorDefault">
         <defName>SD_GlassDoorIris</defName>
         <label>iris glass door (1x1)</label>
-        <uiIconPath>StevesDoors/Things/Building/Door/SD_GlassDoorIris_MenuIcon</uiIconPath>
+        <uiIconPath>StevesDoors/Things/Building/DoorsSingle/Iris/SD_GlassDoorIris_MenuIcon</uiIconPath>
         <building>
             <blueprintGraphicData>
-                <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorIris_Blueprint</texPath>
+                <texPath>StevesDoors/Things/Building/DoorsSingle/Iris/SD_GlassDoorIris_Blueprint</texPath>
             </blueprintGraphicData>
         </building>
         <comps Inherit="False">
@@ -395,26 +395,26 @@
                 <isIrisDoor>true</isIrisDoor>
                 <doorIrisMaxAngle>90</doorIrisMaxAngle>
                 <defaultDoorLeftGraphic>
-                    <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorIrisLeft</texPath>
+                    <texPath>StevesDoors/Things/Building/DoorsSingle/Iris/SD_GlassDoorIrisLeft</texPath>
 					<graphicClass>Graphic_Single</graphicClass>
                     <shaderType>Transparent</shaderType>
                     <drawSize>(1.0, 1.0)</drawSize>
                 </defaultDoorLeftGraphic>
                 <defaultDoorRightGraphic>
-                    <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorIrisRight</texPath>
+                    <texPath>StevesDoors/Things/Building/DoorsSingle/Iris/SD_GlassDoorIrisRight</texPath>
 					<graphicClass>Graphic_Single</graphicClass>
                     <shaderType>Transparent</shaderType>
                     <drawSize>(1.0, 1.0)</drawSize>
                 </defaultDoorRightGraphic>
                 <extraStaticDoorGraphics>
                     <li>
-                        <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorIrisLeftFrame</texPath>
+                        <texPath>StevesDoors/Things/Building/DoorBase/SD_GlassDoorIrisLeftFrame</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
                         <drawSize>(1.0, 1.0)</drawSize>
                     </li>
                     <li>
-                        <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorIrisRightFrame</texPath>
+                        <texPath>StevesDoors/Things/Building/DoorBase/SD_GlassDoorIrisRightFrame</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
                         <drawSize>(1.0, 1.0)</drawSize>
@@ -429,10 +429,10 @@
     <ThingDef ParentName="SD_GlassDoorDefault">
         <defName>SD_GlassDoorIrisEnhanced</defName>
         <label>enhanced iris glass door (1x1)</label>
-        <uiIconPath>StevesDoors/Things/Building/Door/SD_GlassDoorIrisEnhanced_MenuIcon</uiIconPath>
+        <uiIconPath>StevesDoors/Things/Building/DoorsSingle/IrisEnhanced/SD_GlassDoorIrisEnhanced_MenuIcon</uiIconPath>
         <building>
             <blueprintGraphicData>
-                <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorIrisEnhanced_Blueprint</texPath>
+                <texPath>StevesDoors/Things/Building/DoorsSingle/IrisEnhanced/SD_GlassDoorIrisEnhanced_Blueprint</texPath>
             </blueprintGraphicData>
         </building>
         <comps Inherit="False">
@@ -450,26 +450,26 @@
                 <isIrisDoor>true</isIrisDoor>
                 <doorIrisMaxAngle>90</doorIrisMaxAngle>
                 <defaultDoorLeftGraphic>
-                    <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorIrisEnhancedLeft</texPath>
+                    <texPath>StevesDoors/Things/Building/DoorsSingle/IrisEnhanced/SD_GlassDoorIrisEnhancedLeft</texPath>
 					<graphicClass>Graphic_Single</graphicClass>
                     <shaderType>Transparent</shaderType>
                     <drawSize>(1.0, 1.0)</drawSize>
                 </defaultDoorLeftGraphic>
                 <defaultDoorRightGraphic>
-                    <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorIrisEnhancedRight</texPath>
+                    <texPath>StevesDoors/Things/Building/DoorsSingle/IrisEnhanced/SD_GlassDoorIrisEnhancedRight</texPath>
 					<graphicClass>Graphic_Single</graphicClass>
                     <shaderType>Transparent</shaderType>
                     <drawSize>(1.0, 1.0)</drawSize>
                 </defaultDoorRightGraphic>
                 <extraStaticDoorGraphics>
                     <li>
-                        <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorIrisLeftFrame</texPath>
+                        <texPath>StevesDoors/Things/Building/DoorBase/SD_GlassDoorIrisLeftFrame</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
                         <drawSize>(1.0, 1.0)</drawSize>
                     </li>
                     <li>
-                        <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorIrisRightFrame</texPath>
+                        <texPath>StevesDoors/Things/Building/DoorBase/SD_GlassDoorIrisRightFrame</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
                         <drawSize>(1.0, 1.0)</drawSize>
@@ -479,7 +479,7 @@
             <li Class="StevesDoors.CompProperties_ExtraDoorGraphics">
                 <extraDoorGraphics>
                     <li>
-                        <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorIrisInnerEnhancedLeft</texPath>
+                        <texPath>StevesDoors/Things/Building/DoorsSingle/IrisEnhanced/SD_GlassDoorIrisInnerEnhancedLeft</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
                         <drawSize>(1.0, 1.0)</drawSize>
@@ -492,7 +492,7 @@
                         <isLeftSideGraphic>true</isLeftSideGraphic>
                     </li>
                     <li>
-                        <texPath>StevesDoors/Things/Building/Door/SD_GlassDoorIrisInnerEnhancedRight</texPath>
+                        <texPath>StevesDoors/Things/Building/DoorsSingle/IrisEnhanced/SD_GlassDoorIrisInnerEnhancedRight</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
                         <drawSize>(1.0, 1.0)</drawSize>
@@ -513,10 +513,10 @@
     <ThingDef ParentName="SD_GlassDoorDefault">
         <defName>SD_LaserDoorDefault</defName>
         <label>default laser door (1x1)</label>
-        <uiIconPath>StevesDoors/Things/Building/Door/SD_LaserDoorDefault_MenuIcon</uiIconPath>
+        <uiIconPath>StevesDoors/Things/Building/DoorsSingle/Laser/SD_LaserDoorDefault_MenuIcon</uiIconPath>
         <building>
             <blueprintGraphicData>
-                <texPath>StevesDoors/Things/Building/Door/SD_LaserDoorDefault_Blueprint</texPath>
+                <texPath>StevesDoors/Things/Building/DoorsSingle/Laser/SD_LaserDoorDefault_Blueprint</texPath>
             </blueprintGraphicData>
         </building>
         <comps Inherit="False">
@@ -533,7 +533,7 @@
             <li Class="StevesDoors.CompProperties_ExtraDoorGraphics">
                 <extraDoorGraphics>
                     <li>
-                        <texPath>StevesDoors/Things/Building/Door/SD_LaserDoorDefaultLeft</texPath>
+                        <texPath>StevesDoors/Things/Building/DoorsSingle/Laser/SD_LaserDoorDefaultLeft</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
                         <drawSize>(1.0, 1.0)</drawSize>
@@ -544,7 +544,7 @@
                         <isLeftSideGraphic>true</isLeftSideGraphic>
                     </li>
                     <li>
-                        <texPath>StevesDoors/Things/Building/Door/SD_LaserDoorDefaultRight</texPath>
+                        <texPath>StevesDoors/Things/Building/DoorsSingle/Laser/SD_LaserDoorDefaultRight</texPath>
 					    <graphicClass>Graphic_Single</graphicClass>
                         <shaderType>Transparent</shaderType>
                         <drawSize>(1.0, 1.0)</drawSize>
