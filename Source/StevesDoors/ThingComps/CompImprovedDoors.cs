@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Reflection;
 using StevesDoors.Utils;
 using UnityEngine;
 using Verse;
@@ -7,21 +9,25 @@ namespace StevesDoors
 {
     public class CompImprovedDoors : ThingComp
     {
-        public bool _isAccentGraphic;
-        public bool _showAccentGraphics = true;
-        public Color _doorColor = Color.white;
-        public Color _accentColor = Color.white;
-        public readonly MaterialPropertyBlock _mPB = new();
-        public Rot4 _rotation;
-        public float _fadeMultiplier;
-        public Vector3 _moveDir;
-        public ImprovedDoorExtension _ext;
+        public bool IsAccentGraphic;
+        public bool ShowAccentGraphics = true;
+        public float FadeMultiplier;
+        public float RotationAngle;
+        public Rot4 Rotation;
+        public Vector3 MoveDir;
+        public Vector3 DrawPos;
+        public Color DoorColor = Color.white;
+        public Color AccentColor = Color.white;
+        public ImprovedDoorExtension Ext;
+        public Matrix4x4 Matrix;
+        public Material FinalMat;
+        public MaterialPropertyBlock MPB = new();
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
-            _ext = parent.def.GetModExtension<ImprovedDoorExtension>();
-            _rotation = parent.Rotation;
+            Ext = parent.def.GetModExtension<ImprovedDoorExtension>();
+            Rotation = parent.Rotation;
         }
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
@@ -30,9 +36,9 @@ namespace StevesDoors
             {
                 yield return gizmo;
             }
-            if (_ext != null)
+            if (Ext != null)
             {
-                if (_ext.isLaserDoor)
+                if (Ext.isLaserDoor)
                 {
                     yield return new Command_Action
                     {
@@ -41,11 +47,11 @@ namespace StevesDoors
                         icon = ContentFinder<Texture2D>.Get("StevesDoors/UI/Icons/LaserDoorColorPicker_GizmoIcon"),
                         action = () =>
                         {
-                            Find.WindowStack.Add(new Dialogue_DoorColorPicker(_doorColor, newColor => _doorColor = newColor));
+                            Find.WindowStack.Add(new Dialogue_DoorColorPicker(DoorColor, newColor => DoorColor = newColor));
                         }
                     };
                 }
-                if (_ext.hasAccentColors)
+                if (Ext.hasAccentColors)
                 {
                     yield return new Command_Action
                     {
@@ -54,7 +60,7 @@ namespace StevesDoors
                         icon = ContentFinder<Texture2D>.Get("StevesDoors/UI/Icons/DoorAccentColorPicker_GizmoIcon"),
                         action = () =>
                         {
-                            Find.WindowStack.Add(new Dialogue_DoorAccentsColorPicker(_accentColor, newColor => _accentColor = newColor));
+                            Find.WindowStack.Add(new Dialogue_DoorAccentsColorPicker(AccentColor, newColor => AccentColor = newColor));
                         }
                     };
                     yield return new Command_Toggle
@@ -62,10 +68,10 @@ namespace StevesDoors
                         defaultLabel = "Show Accents",
                         defaultDesc = "Toggle whether or not accent pieces are rendered.",
                         icon = ContentFinder<Texture2D>.Get("StevesDoors/UI/Icons/DoorShowAccents_GizmoIcon"),
-                        isActive = () => _showAccentGraphics,
+                        isActive = () => ShowAccentGraphics,
                         toggleAction = delegate
                         {
-                            _showAccentGraphics = !_showAccentGraphics;
+                            ShowAccentGraphics = !ShowAccentGraphics;
                         }
                     };
                 }

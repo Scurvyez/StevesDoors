@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace StevesDoors
 {
+    /*
     [StaticConstructorOnStartup]
     public class Building_UnmirroredMultiTileDoor : Building_MultiTileDoor
     {
@@ -15,4 +16,5 @@ namespace StevesDoors
             Comps_PostDraw();
         }
     }
+    */
 }

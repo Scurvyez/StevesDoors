@@ -23,83 +23,82 @@ namespace StevesDoors
             {
                 foreach (var gD in Props.extraDoorGraphics)
                 {
-                    _fadeMultiplier = 1f - (Door.OpenPct * gD.fadeFactor * _accentColor.a);
-                    _isAccentGraphic = gD.isAccentGraphic;
+                    FadeMultiplier = 1f - (Door.OpenPct * gD.fadeFactor * AccentColor.a);
+                    IsAccentGraphic = gD.isAccentGraphic;
                     Graphic graphic = gD.Graphic;
                     Material mat = graphic.MatSingle;
 
                     float archFactor = gD.xMoveAmount * gD.archFactor;
 
-                    switch (_rotation.AsInt)
+                    switch (Rotation.AsInt)
                     {
                         case 0: // door facing South
                             float xMoveS = gD.isLeftSideGraphic ? -gD.xMoveAmount : gD.xMoveAmount;
                             float zMoveS = gD.shouldArch && gD.isLeftSideGraphic ? Mathf.Lerp(-archFactor, archFactor, Door.OpenPct) :
                                           gD.shouldArch && !gD.isLeftSideGraphic ? Mathf.Lerp(archFactor, -archFactor, Door.OpenPct) : 0f;
-                            _moveDir = new Vector3(xMoveS, 0f, zMoveS);
+                            MoveDir = new Vector3(xMoveS, 0f, zMoveS);
                             break;
 
                         case 1: // door facing West
                             float zMoveW = gD.isLeftSideGraphic ? gD.xMoveAmount : -gD.xMoveAmount;
                             float xMoveW = gD.shouldArch && gD.isLeftSideGraphic ? Mathf.Lerp(-archFactor, archFactor, Door.OpenPct) :
                                           gD.shouldArch && !gD.isLeftSideGraphic ? Mathf.Lerp(archFactor, -archFactor, Door.OpenPct) : 0f;
-                            _moveDir = new Vector3(xMoveW, 0f, zMoveW);
+                            MoveDir = new Vector3(xMoveW, 0f, zMoveW);
                             break;
 
                         case 2: // door facing North
                             float xMoveN = gD.isLeftSideGraphic ? gD.xMoveAmount : -gD.xMoveAmount;
                             float zMoveN = gD.shouldArch && gD.isLeftSideGraphic ? Mathf.Lerp(archFactor, -archFactor, Door.OpenPct) :
                                           gD.shouldArch && !gD.isLeftSideGraphic ? Mathf.Lerp(-archFactor, archFactor, Door.OpenPct) : 0f;
-                            _moveDir = new Vector3(xMoveN, 0f, zMoveN);
+                            MoveDir = new Vector3(xMoveN, 0f, zMoveN);
                             break;
 
                         case 3: // door facing East
                             float zMoveE = gD.isLeftSideGraphic ? -gD.xMoveAmount : gD.xMoveAmount;
                             float xMoveE = gD.shouldArch && gD.isLeftSideGraphic ? Mathf.Lerp(archFactor, -archFactor, Door.OpenPct) :
                                           gD.shouldArch && !gD.isLeftSideGraphic ? Mathf.Lerp(-archFactor, archFactor, Door.OpenPct) : 0f;
-                            _moveDir = new Vector3(xMoveE, 0f, zMoveE);
+                            MoveDir = new Vector3(xMoveE, 0f, zMoveE);
                             break;
 
                         default:
-                            _moveDir = Vector3.zero;
+                            MoveDir = Vector3.zero;
                             break;
                     }
-                    DrawExtraDoorGraphics(_moveDir, gD.doorIrisMaxAngle, gD.spinFactor, gD.shouldFade, _fadeMultiplier, Door.OpenPct, mat, gD.drawSize, _isAccentGraphic);
+                    DrawExtraDoorGraphics(MoveDir, gD.doorIrisMaxAngle, gD.spinFactor, gD.shouldFade, FadeMultiplier, Door.OpenPct, mat, gD.drawSize, IsAccentGraphic);
                 }
             }
         }
         
         private void DrawExtraDoorGraphics(Vector3 xMoveAmount, float irisMaxAngle, float spinFactor, bool shouldFade, float opacity, float openPct, Material mat, Vector3 drawSize, bool isAccent)
         {
-            Vector3 drawPos = parent.DrawPos + xMoveAmount * openPct;
-            float rotationAngle = irisMaxAngle * Door.OpenPct;
+            DrawPos = parent.DrawPos + xMoveAmount * openPct;
+            RotationAngle = irisMaxAngle * Door.OpenPct;
+            Matrix = Matrix4x4.TRS(DrawPos, Rotation.AsQuat * Quaternion.Euler(0f, RotationAngle * spinFactor, 0f), new Vector3(drawSize.x, 1f, drawSize.y));
+            FinalMat = shouldFade ? FadedMaterialPool.FadedVersionOf(mat, opacity) : mat;
 
-            Matrix4x4 matrix = Matrix4x4.TRS(drawPos, _rotation.AsQuat * Quaternion.Euler(0f, rotationAngle * spinFactor, 0f), new Vector3(drawSize.x, 1f, drawSize.y));
-            Material finalMat = shouldFade ? FadedMaterialPool.FadedVersionOf(mat, opacity) : mat;
-
-            _mPB.Clear();
-            if (_ext != null && _ext.isLaserDoor)
+            MPB.Clear();
+            if (Ext != null && Ext.isLaserDoor)
             {
-                _mPB.SetColor("_Color", new Color(_doorColor.r, _doorColor.g, _doorColor.b, opacity));
+                MPB.SetColor("_Color", new Color(DoorColor.r, DoorColor.g, DoorColor.b, opacity));
             }
             else if (isAccent)
             {
-                _mPB.SetColor("_Color", new Color(_accentColor.r, _accentColor.g, _accentColor.b, (_showAccentGraphics ? 1f : 0f) * opacity));
+                MPB.SetColor("_Color", new Color(AccentColor.r, AccentColor.g, AccentColor.b, (ShowAccentGraphics ? 1f : 0f) * opacity));
             }
             else
             {
-                _mPB.SetColor("_Color", new Color(mat.color.r, mat.color.g, mat.color.b, opacity));
+                MPB.SetColor("_Color", new Color(mat.color.r, mat.color.g, mat.color.b, opacity));
             }
-            Graphics.DrawMesh(MeshPool.plane10, matrix, finalMat, 0, null, 0, _mPB);
+            Graphics.DrawMesh(MeshPool.plane10, Matrix, FinalMat, 0, null, 0, MPB);
         }
 
         public override void PostExposeData()
         {
-            Scribe_Values.Look(ref _doorColor, "_doorColor", Color.white);
-            Scribe_Values.Look(ref _accentColor, "_accentColor", Color.white);
-            Scribe_Values.Look(ref _showAccentGraphics, "_showAccentGraphics", true);
-            Scribe_Values.Look(ref _fadeMultiplier, "_fadeMultiplier");
-            Scribe_Values.Look(ref _moveDir, "_moveDir");
+            Scribe_Values.Look(ref DoorColor, "_doorColor", Color.white);
+            Scribe_Values.Look(ref AccentColor, "_accentColor", Color.white);
+            Scribe_Values.Look(ref ShowAccentGraphics, "_showAccentGraphics", true);
+            Scribe_Values.Look(ref FadeMultiplier, "_fadeMultiplier");
+            Scribe_Values.Look(ref MoveDir, "_moveDir");
         }
     }
 
@@ -117,7 +116,7 @@ namespace StevesDoors
             }
             if (extraDoorGraphics == null)
             {
-                yield return $"<color={SDLog.ErrorMsgCol}>[Steve's Doors]</color> [CompProperties_ImprovedDoorsSingle] No data found for <extraDoorGraphics>, please provide some.";
+                yield return $"{SDLog.ErrorMsgCol} [CompProperties_ImprovedDoorsSingle] No data found for <extraDoorGraphics>, please provide some.";
             }
         }
     }
