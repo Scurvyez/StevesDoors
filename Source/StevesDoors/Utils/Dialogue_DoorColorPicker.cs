@@ -7,13 +7,13 @@ namespace StevesDoors
     public class Dialogue_DoorColorPicker : Window
     {
         private float _colorWheelSize;
-        private float _acceptButtonWidth;
+        private readonly float _acceptButtonWidth;
         private float _colorWheelPosX;
         private float _colorWheelPosY;
         private bool _hsvColorWheelDragging;
         private Color _selectedColor;
-        private Color _oldColor;
-        private Action<Color> _colorSelectedCallback;
+        private readonly Color _oldColor;
+        private readonly Action<Color> _colorSelectedCallback;
         private float _iconSize;
         private float _iconSpacing;
         private string _labelCur;
@@ -48,8 +48,8 @@ namespace StevesDoors
 
             _iconSize = 20f;
             _iconSpacing = _acceptButtonWidth;
-            float iconPosX = inRect.xMax - _colorBarWidth;
-            float iconPosY = inRect.yMin + ((_colorBarWidth / 5f) * 5.5f);
+            var iconPosX = inRect.xMax - _colorBarWidth;
+            var iconPosY = inRect.yMin + ((_colorBarWidth / 5f) * 5.5f);
 
             // Copy icon
             if (Widgets.ButtonImage(new Rect(iconPosX, iconPosY, _iconSize, _iconSize), ContentFinder<Texture2D>.Get("UI/Buttons/Copy"), 
@@ -63,7 +63,7 @@ namespace StevesDoors
             if (Widgets.ButtonImage(new Rect(iconPosX + _iconSpacing, iconPosY, _iconSize, _iconSize), ContentFinder<Texture2D>.Get("UI/Buttons/Paste"), 
                 false, tooltip: "Paste the copied color."))
             {
-                string colorString = GUIUtility.systemCopyBuffer;
+                var colorString = GUIUtility.systemCopyBuffer;
 
                 if (ColorUtility.TryParseHtmlString("#" + colorString, out Color parsedColor))
                 {
@@ -89,8 +89,8 @@ namespace StevesDoors
             _labelOld = "Old Color";
 
             _colorBarWidth = Mathf.Max(100f, _labelCur.GetWidthCached());
-            float colorBarPosX = rect.xMax - _colorBarWidth;
-            float colorBarPosY = rect.yMin;
+            var colorBarPosX = rect.xMax - _colorBarWidth;
+            var colorBarPosY = rect.yMin;
 
             Widgets.Label(new Rect(colorBarPosX, colorBarPosY, _colorBarWidth, _colorBarWidth / 5), _labelCur);
             Widgets.DrawBoxSolid(new Rect(colorBarPosX, colorBarPosY + (_colorBarWidth / 5f), _colorBarWidth, _colorBarWidth / 5f), currentColor);

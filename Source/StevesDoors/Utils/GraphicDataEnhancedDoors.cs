@@ -6,7 +6,6 @@ namespace StevesDoors
     {
         public bool isAccentGraphic = false;
         public bool isLeftSideGraphic = false;
-        public bool useGlowerColor = false;
         public bool shouldFade = false;
         public bool shouldArch = false;
 

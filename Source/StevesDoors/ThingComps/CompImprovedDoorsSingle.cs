@@ -72,24 +72,24 @@ namespace StevesDoors
         private void DrawExtraDoorGraphics(Vector3 xMoveAmount, float irisMaxAngle, float spinFactor, bool shouldFade, float opacity, float openPct, Material mat, Vector3 drawSize, bool isAccent)
         {
             DrawPos = parent.DrawPos + xMoveAmount * openPct;
-            RotationAngle = irisMaxAngle * Door.OpenPct;
+            RotationAngle = irisMaxAngle * openPct;
             Matrix = Matrix4x4.TRS(DrawPos, Rotation.AsQuat * Quaternion.Euler(0f, RotationAngle * spinFactor, 0f), new Vector3(drawSize.x, 1f, drawSize.y));
             FinalMat = shouldFade ? FadedMaterialPool.FadedVersionOf(mat, opacity) : mat;
 
-            MPB.Clear();
+            Mpb.Clear();
             if (Ext != null && Ext.isLaserDoor)
             {
-                MPB.SetColor("_Color", new Color(DoorColor.r, DoorColor.g, DoorColor.b, opacity));
+                Mpb.SetColor(ShaderPropertyIDs.Color, new Color(DoorColor.r, DoorColor.g, DoorColor.b, opacity));
             }
             else if (isAccent)
             {
-                MPB.SetColor("_Color", new Color(AccentColor.r, AccentColor.g, AccentColor.b, (ShowAccentGraphics ? 1f : 0f) * opacity));
+                Mpb.SetColor(ShaderPropertyIDs.Color, new Color(AccentColor.r, AccentColor.g, AccentColor.b, (ShowAccentGraphics ? 1f : 0f) * opacity));
             }
             else
             {
-                MPB.SetColor("_Color", new Color(mat.color.r, mat.color.g, mat.color.b, opacity));
+                Mpb.SetColor(ShaderPropertyIDs.Color, new Color(mat.color.r, mat.color.g, mat.color.b, opacity));
             }
-            Graphics.DrawMesh(MeshPool.plane10, Matrix, FinalMat, 0, null, 0, MPB);
+            Graphics.DrawMesh(MeshPool.plane10, Matrix, FinalMat, 0, null, 0, Mpb);
         }
 
         public override void PostExposeData()

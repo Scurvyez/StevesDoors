@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Reflection;
+﻿using System.Collections.Generic;
 using StevesDoors.Utils;
 using UnityEngine;
 using Verse;
@@ -9,19 +7,19 @@ namespace StevesDoors
 {
     public class CompImprovedDoors : ThingComp
     {
-        public bool IsAccentGraphic;
-        public bool ShowAccentGraphics = true;
-        public float FadeMultiplier;
-        public float RotationAngle;
-        public Rot4 Rotation;
-        public Vector3 MoveDir;
-        public Vector3 DrawPos;
-        public Color DoorColor = Color.white;
-        public Color AccentColor = Color.white;
-        public ImprovedDoorExtension Ext;
-        public Matrix4x4 Matrix;
-        public Material FinalMat;
-        public MaterialPropertyBlock MPB = new();
+        protected bool IsAccentGraphic;
+        protected bool ShowAccentGraphics = true;
+        protected float FadeMultiplier;
+        protected float RotationAngle;
+        protected Rot4 Rotation;
+        protected Vector3 MoveDir;
+        protected Vector3 DrawPos;
+        protected Color DoorColor = Color.white;
+        protected Color AccentColor = Color.white;
+        protected ImprovedDoorExtension Ext;
+        protected Matrix4x4 Matrix;
+        protected Material FinalMat;
+        protected readonly MaterialPropertyBlock Mpb = new();
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {

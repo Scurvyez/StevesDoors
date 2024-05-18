@@ -8,7 +8,6 @@
         <label>double laser door (2x1)</label>
         <size>(2, 1)</size>
         <designatorDropdown>SZ_GlassDoubleDoors</designatorDropdown>
-        <!-- <thingClass>StevesDoors.Building_UnmirroredMultiTileDoor</thingClass> -->
         <uiIconPath>StevesDoors/Things/Building/DoorsDouble/Laser/SD_LaserDoorDouble_MenuIcon</uiIconPath>
         <statBases>
             <WorkToBuild>15000</WorkToBuild>
@@ -99,7 +98,6 @@
         <label>double enhanced iris glass door (2x1)</label>
         <size>(2, 1)</size>
         <designatorDropdown>SZ_GlassDoubleDoors</designatorDropdown>
-        <!-- <thingClass>StevesDoors.Building_UnmirroredMultiTileDoor</thingClass> -->
         <uiIconPath>StevesDoors/Things/Building/DoorsDouble/IrisEnhanced/SD_GlassDoorIrisEnhancedDouble_MenuIcon</uiIconPath>
         <statBases>
             <WorkToBuild>15000</WorkToBuild>
@@ -272,7 +270,6 @@
         <label>double default glass door (2x1)</label>
         <size>(2, 1)</size>
         <designatorDropdown>SZ_GlassDoubleDoors</designatorDropdown>
-        <!-- <thingClass>StevesDoors.Building_UnmirroredMultiTileDoor</thingClass> -->
         <uiIconPath>StevesDoors/Things/Building/DoorsDouble/Default/SD_GlassDoorDefaultDouble_MenuIcon</uiIconPath>
         <statBases>
             <WorkToBuild>15000</WorkToBuild>
@@ -382,7 +379,6 @@
         <label>double cascading glass door (2x1)</label>
         <size>(2, 1)</size>
         <designatorDropdown>SZ_GlassDoubleDoors</designatorDropdown>
-        <!-- <thingClass>StevesDoors.Building_UnmirroredMultiTileDoor</thingClass> -->
         <uiIconPath>StevesDoors/Things/Building/DoorsDouble/Cascading/SD_GlassDoorCascadingDouble_MenuIcon</uiIconPath>
         <statBases>
             <WorkToBuild>15000</WorkToBuild>
@@ -524,7 +520,6 @@
         <label>TEST DOOR</label>
         <size>(2, 1)</size>
         <designatorDropdown>SZ_GlassDoubleDoors</designatorDropdown>
-        <!-- <thingClass>StevesDoors.Building_UnmirroredMultiTileDoor</thingClass> -->
         <uiIconPath>StevesDoors/Things/Building/DoorsDouble/Default/SD_GlassDoorDefaultDouble_MenuIcon</uiIconPath>
         <statBases>
             <WorkToBuild>15000</WorkToBuild>

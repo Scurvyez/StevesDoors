@@ -71,18 +71,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="StevesDoorsMain.cs" />
-    <Compile Include="ThingClasses\Building_UnmirroredMultiTileDoor.cs" />
     <Compile Include="ThingComps\CompImprovedDoors.cs" />
     <Compile Include="ThingComps\CompImprovedDoorsDouble.cs" />
     <Compile Include="Utils\ImprovedDoorExtension.cs" />
     <Compile Include="Utils\Dialogue_DoorAccentsColorPicker.cs" />
     <Compile Include="Utils\Dialogue_DoorColorPicker.cs" />
     <Compile Include="Utils\SDLog.cs" />
-    <Compile Include="Utils\SDDefOf.cs" />
     <Compile Include="Utils\GraphicDataEnhancedDoors.cs" />
     <Compile Include="ThingClasses\Building_UnmirroredDoor.cs" />
     <Compile Include="ThingComps\CompImprovedDoorsSingle.cs" />
-    <Compile Include="ThingComps\CompEnhancedDoorGraphics.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\AnimationFunctionsUtility.cs" />
     <Compile Include="Utils\Assets.cs" />
